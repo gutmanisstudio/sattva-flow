@@ -1,21 +1,30 @@
 import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import Pillars from '@/components/Pillars'
+import Classes from '@/components/Classes'
+import Schedule from '@/components/Schedule'
+import Faq from '@/components/Faq'
+import ContactForm from '@/components/ContactForm'
+import Map from '@/components/Map'
 import Footer from '@/components/Footer'
+import MobileBookCta from '@/components/MobileBookCta'
 
 export default function Home() {
   return (
     <SmoothScroll>
       <Navbar />
-      <main>
+      <main className="pb-24 lg:pb-0">
         <Hero />
-        <section className="py-24 md:py-32 text-center px-6">
-          <p className="font-[family-name:var(--font-display)] italic text-xl md:text-2xl text-ink-soft">
-            Offerings, schedule, and announcements coming soon.
-          </p>
-        </section>
+        <Pillars />
+        <Classes />
+        <Schedule />
+        <Faq />
+        <ContactForm />
+        <Map />
       </main>
       <Footer />
+      <MobileBookCta />
     </SmoothScroll>
   )
 }

@@ -17,18 +17,20 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-cream"
     >
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-70"
-      >
-        <source src={studio.heroVideo} type="video/mp4" />
-      </video>
+      {studio.heroVideo && (
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+        >
+          <source src={studio.heroVideo} type="video/mp4" />
+        </video>
+      )}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/50 via-bg/10 to-ink/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-bg via-cream to-blush/30" />
 
       <div
         className={`relative z-10 text-center px-6 max-w-3xl transition-all duration-1000 ease-out ${
