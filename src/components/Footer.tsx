@@ -1,41 +1,61 @@
-'use client'
-import useIsMobile from '@/hooks/useIsMobile'
-import { restaurant } from '@/config/restaurant'
+import { studio } from '@/config/studio'
+import Logo from './Logo'
 
 export default function Footer() {
-  const isMobile = useIsMobile()
+  const waNumber = studio.whatsapp.replace(/\D/g, '')
+
   return (
-    <footer style={{ background: restaurant.colors.text, padding: isMobile ? '3rem 1.5rem 2rem' : '5rem 2rem 2.5rem' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.5fr 1fr 1fr 1fr', gap: isMobile ? '2rem' : '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-        <div>
-          <img src="/images/logo123.png" alt={restaurant.name} style={{ height: '50px', objectFit: 'contain', marginBottom: '1rem' }} />
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', fontWeight: 300, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: '220px', marginBottom: '1.5rem' }}>Autentiska armēņu virtuve Jūrmalas sirdī. Konditoreja un bērnu rotaļu istaba.</p>
-          <div style={{ display: 'flex', gap: '0.6rem' }}>
-            {['IG'].map(s => (
-              <a key={s} href={restaurant.instagram} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '0.62rem', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = restaurant.colors.primary; e.currentTarget.style.color = restaurant.colors.primary }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}>{s}</a>
-            ))}
-          </div>
+    <footer id="visit" className="bg-cream text-ink pt-16 pb-8 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:justify-between">
+        <div className="flex flex-col gap-3 max-w-xs">
+          <Logo className="text-2xl" />
+          <p className="font-[family-name:var(--font-display)] italic text-ink-soft">
+            {studio.tagline}
+          </p>
         </div>
-        {[
-          { title: 'Navigācija', items: ['Par mums', 'Ēdienkarte', 'Galerija', 'Bērnu istaba', 'Rezervācija'] },
-          { title: 'Darba laiks', items: [restaurant.hours.weekday, restaurant.hours.friday, restaurant.hours.sunday] },
-          { title: 'Kontakti', items: [...restaurant.address.split(', '), restaurant.phone, restaurant.email].filter(Boolean) },
-        ].map(col => (
-          <div key={col.title}>
-            <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1.2rem' }}>{col.title}</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {col.items.map(item => <li key={item} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', fontWeight: 300, color: 'rgba(255,255,255,0.5)' }}>{item}</li>)}
-            </ul>
-          </div>
-        ))}
+
+        <div className="flex flex-col gap-2 text-sm">
+          <p className="text-xs uppercase tracking-[0.15em] text-ink-soft mb-1">Visit</p>
+          <p>{studio.address}</p>
+          <a
+            href={studio.mapsLink}
+            target="_blank"
+            rel="noreferrer"
+            className="text-ink-soft hover:text-ink transition-colors"
+          >
+            Open in maps →
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-2 text-sm">
+          <p className="text-xs uppercase tracking-[0.15em] text-ink-soft mb-1">Contact</p>
+          <a href={`tel:${studio.phone}`} className="hover:text-ink-soft transition-colors">
+            {studio.phone}
+          </a>
+          <a
+            href={`https://wa.me/${waNumber}`}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-ink-soft transition-colors"
+          >
+            WhatsApp
+          </a>
+          <a
+            href={studio.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-ink-soft transition-colors"
+          >
+            {studio.instagramHandle}
+          </a>
+        </div>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '2rem', flexDirection: isMobile ? 'column' as const : 'row' as const, gap: isMobile ? '0.5rem' : '0' }}>
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.2)' }}>© 2026 {restaurant.name}, Jūrmala. All rights reserved.</p>
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.12)' }}>Site by Gutmanis Studio</p>
-      </div>
+
+      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-ink/10 text-xs text-ink-soft flex justify-between">
+        <span>
+          © {new Date().getFullYear()} {studio.name}
+        </span>
+        <span>Jūrmala</span>
       </div>
     </footer>
   )

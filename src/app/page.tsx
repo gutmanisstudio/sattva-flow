@@ -1,13 +1,6 @@
 import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
-import MenuSection from '@/components/MenuSection'
-import KidsRoom from '@/components/KidsRoom'
-import CinematicBreak from '@/components/CinematicBreak'
-import Reviews from '@/components/Reviews'
-import Reservation from '@/components/Reservation'
-import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -16,13 +9,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <MenuSection />
-        <KidsRoom />
-        <CinematicBreak />
-        <Reviews />
-        <Reservation />
-        <Contact />
+        <section className="py-24 md:py-32 text-center px-6">
+          <p className="font-[family-name:var(--font-display)] italic text-xl md:text-2xl text-ink-soft">
+            Offerings, schedule, and announcements coming soon.
+          </p>
+        </section>
       </main>
       <Footer />
     </SmoothScroll>
