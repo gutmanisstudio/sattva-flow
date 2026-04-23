@@ -2,28 +2,31 @@
 import FadeIn from './FadeIn'
 import useIsMobile from '@/hooks/useIsMobile'
 import { studio } from '@/config/studio'
+import { ui } from '@/config/ui'
+import { useT } from '@/config/i18n'
 
 export default function MenuSection() {
   const isMobile = useIsMobile()
+  const t = useT()
   return (
     <section id="classes" style={{ background: studio.colors.bg, padding: isMobile ? '4rem 1.5rem' : '7rem 4rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.75rem' }}>Classes</p>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(3rem, 6vw, 5rem)', letterSpacing: '0.1em', color: studio.colors.text }}>
-              FOUR <span style={{ color: studio.colors.primary }}>PILLARS</span>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.75rem' }}>{t(ui.menuKicker)}</p>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 6vw, 5rem)', letterSpacing: '0.1em', color: studio.colors.text }}>
+              {t(ui.menuTitle1)} <span style={{ color: studio.colors.primary }}>{t(ui.menuTitle2)}</span>
             </h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', fontWeight: 300, color: studio.colors.gray, marginTop: '0.5rem' }}>
-              Movement, healing, mind, and gatherings. Twelve offerings across the week.
+              {t(ui.menuSub)}
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
-            {studio.menu.Movement.map((item) => (
+            {studio.menu.Movement.map((item, idx) => (
               <div key={item.name} style={{
                 background: studio.colors.bgAlt,
                 borderRadius: '16px', overflow: 'hidden',
@@ -33,18 +36,52 @@ export default function MenuSection() {
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'}
               >
-                <div style={{ height: '280px', overflow: 'hidden', background: 'linear-gradient(135deg, #F5EDE0 0%, #E8C5B8 100%)', position: 'relative' }}>
-                  <img src={item.img} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                    onMouseEnter={e => (e.target as HTMLImageElement).style.transform = 'scale(1.06)'}
-                    onMouseLeave={e => (e.target as HTMLImageElement).style.transform = 'scale(1)'}
-                    onError={e => (e.target as HTMLImageElement).style.display = 'none'} />
+                <div style={{
+                  height: '280px', overflow: 'hidden', position: 'relative',
+                  background: `linear-gradient(135deg, #F5EDE0 0%, #E8C5B8 55%, #B8826F 160%)`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  {/* Subtle radial shimmer */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'radial-gradient(circle at 30% 20%, rgba(254,252,248,0.35) 0%, transparent 55%)',
+                    pointerEvents: 'none',
+                  }} />
+                  {/* Corner index */}
+                  <p style={{
+                    position: 'absolute', top: '1.25rem', left: '1.5rem',
+                    fontFamily: "'DM Sans', sans-serif", fontSize: '0.65rem', fontWeight: 700,
+                    letterSpacing: '0.22em', textTransform: 'uppercase',
+                    color: studio.colors.primaryDark, opacity: 0.55,
+                  }}>
+                    {String(idx + 1).padStart(2, '0')} · {t(studio.pillars[0].title)}
+                  </p>
+                  {/* Watermark class name */}
+                  <p style={{
+                    position: 'relative', zIndex: 1,
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 'clamp(2.2rem, 3.4vw, 3rem)',
+                    letterSpacing: '0.06em',
+                    color: studio.colors.primaryDark,
+                    textAlign: 'center',
+                    lineHeight: 0.95,
+                    padding: '0 1rem',
+                    textShadow: '0 1px 0 rgba(254,252,248,0.4)',
+                  }}>
+                    {item.name.toUpperCase()}
+                  </p>
+                  {/* Bottom accent bar */}
+                  <div style={{
+                    position: 'absolute', bottom: 0, left: 0, right: 0,
+                    height: '3px', background: studio.colors.primary,
+                  }} />
                 </div>
                 <div style={{ padding: '1.4rem 1.5rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem' }}>
                     <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: studio.colors.text }}>{item.name}</p>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.3rem', color: studio.colors.primary, letterSpacing: '0.05em' }}>{item.price}</span>
+                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.3rem', color: studio.colors.primary, letterSpacing: '0.05em' }}>{item.price}</span>
                   </div>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.6 }}>{item.desc}</p>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.6 }}>{t(item.desc)}</p>
                 </div>
               </div>
             ))}
@@ -54,8 +91,8 @@ export default function MenuSection() {
         {/* Healing + Gatherings as a secondary 6-item grid */}
         <FadeIn delay={0.2}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.5rem' }}>More offerings</p>
-            <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 3vw, 3rem)', letterSpacing: '0.08em', color: studio.colors.text }}>HEALING · GATHERINGS</h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.5rem' }}>{t(ui.menuMoreKicker)}</p>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 3vw, 3rem)', letterSpacing: '0.08em', color: studio.colors.text }}>{t(ui.menuMoreTitle)}</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '1rem' }}>
             {[...studio.menu.Healing, ...studio.menu.Gatherings].map((item) => (
@@ -65,9 +102,9 @@ export default function MenuSection() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                   <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: studio.colors.text }}>{item.name}</p>
-                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.1rem', color: studio.colors.primary, letterSpacing: '0.05em' }}>{item.price}</span>
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', color: studio.colors.primary, letterSpacing: '0.05em' }}>{item.price}</span>
                 </div>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.55 }}>{item.desc}</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.55 }}>{t(item.desc)}</p>
               </div>
             ))}
           </div>
@@ -79,13 +116,13 @@ export default function MenuSection() {
               onMouseEnter={e => { e.currentTarget.style.background = studio.colors.primaryDark; e.currentTarget.style.transform = 'scale(1.04)' }}
               onMouseLeave={e => { e.currentTarget.style.background = studio.colors.primary; e.currentTarget.style.transform = 'scale(1)' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Book a class
+              {t(ui.bookAClass)}
             </a>
             <a href={`tel:${studio.phone}`} style={{ background: 'transparent', color: studio.colors.primary, fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.85rem 2rem', borderRadius: '999px', textDecoration: 'none', border: `1.5px solid ${studio.colors.primary}`, transition: 'all 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
               onMouseEnter={e => { e.currentTarget.style.background = studio.colors.primary; e.currentTarget.style.color = '#FEFCF8' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = studio.colors.primary }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              Call us
+              {t(ui.callUs)}
             </a>
           </div>
         </FadeIn>

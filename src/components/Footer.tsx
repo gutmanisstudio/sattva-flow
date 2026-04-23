@@ -2,16 +2,19 @@
 import useIsMobile from '@/hooks/useIsMobile'
 import Logo from './Logo'
 import { studio } from '@/config/studio'
+import { ui } from '@/config/ui'
+import { useT } from '@/config/i18n'
 
 export default function Footer() {
   const isMobile = useIsMobile()
+  const t = useT()
   return (
     <footer style={{ background: studio.colors.bgAlt, padding: isMobile ? '3rem 1.5rem 2rem' : '5rem 2rem 2.5rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.5fr 1fr 1fr 1fr', gap: isMobile ? '2rem' : '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(44,36,32,0.1)' }}>
           <div>
             <div style={{ marginBottom: '1rem' }}><Logo color={studio.colors.text} fontSize="1.35rem" /></div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>Holistic studio · body &amp; soul. Movement, healing, and gatherings in the heart of Jūrmala.</p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>{t(ui.footerBlurb)}</p>
             <div style={{ display: 'flex', gap: '0.6rem' }}>
               <a href={studio.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid rgba(44,36,32,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: studio.colors.gray, textDecoration: 'none', transition: 'all 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = studio.colors.primary; e.currentTarget.style.color = studio.colors.primary }}
@@ -26,9 +29,9 @@ export default function Footer() {
             </div>
           </div>
           {[
-            { title: 'Explore', items: [{l:'About',h:'#about'},{l:'Classes',h:'#classes'},{l:'Schedule',h:'#schedule'},{l:'Book',h:'#book'},{l:'Visit',h:'#visit'}] },
-            { title: 'Hours', items: [{l:studio.hours.weekday,h:null},{l:studio.hours.friday,h:null},{l:studio.hours.sunday,h:null}] },
-            { title: 'Contact', items: [{l:studio.address,h:null},{l:studio.phone,h:`tel:${studio.phone}`},{l:studio.instagramHandle,h:studio.instagram}] },
+            { title: t(ui.footerExplore), items: [{l:t(ui.navAbout),h:'/about'},{l:t(ui.navClasses),h:'/classes'},{l:t(ui.navSchedule),h:'/schedule'},{l:t(ui.footerBook),h:'/schedule#book'},{l:t(ui.navVisit),h:'/#visit'}] },
+            { title: t(ui.footerHours), items: [{l:t(studio.hours.weekday),h:null},{l:t(studio.hours.friday),h:null},{l:t(studio.hours.sunday),h:null}] },
+            { title: t(ui.footerContact), items: [{l:studio.address,h:null},{l:studio.phone,h:`tel:${studio.phone}`},{l:studio.instagramHandle,h:studio.instagram}] },
           ].map(col => (
             <div key={col.title}>
               <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '1.2rem' }}>{col.title}</h4>
@@ -45,7 +48,7 @@ export default function Footer() {
           ))}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '2rem', flexDirection: isMobile ? 'column' as const : 'row' as const, gap: isMobile ? '0.5rem' : '0' }}>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 300, color: 'rgba(44,36,32,0.5)' }}>© {new Date().getFullYear()} {studio.name}, Jūrmala. All rights reserved.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 300, color: 'rgba(44,36,32,0.5)' }}>© {new Date().getFullYear()} {studio.name}, Jūrmala. {t(ui.footerRights)}</p>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', color: 'rgba(44,36,32,0.35)' }}>Site by Gutmanis Studio</p>
         </div>
       </div>

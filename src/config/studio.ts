@@ -1,9 +1,17 @@
+import type { I18n } from './i18n'
+
 export const studio = {
   name: 'SattvaFlow',
-  tagline: 'Holistic · Body & Soul',
-  description: 'Yoga, movement, healing, and gatherings — tended in Jūrmala.',
-  highlight1: 'Memberships & drop-ins · +371 26835974',
-  highlight2: 'Bookings via Fresha',
+  tagline: { en: 'Holistic · Body & Soul', ru: 'Холистика · Тело и душа' } as I18n,
+  description: {
+    en: 'Yoga, movement, healing, and gatherings — tended in Jūrmala.',
+    ru: 'Йога, движение, оздоровление и встречи — в Юрмале.',
+  } as I18n,
+  highlight1: {
+    en: 'Memberships & drop-ins · +371 26835974',
+    ru: 'Абонементы и разовые занятия · +371 26835974',
+  } as I18n,
+  highlight2: { en: 'Bookings via Fresha', ru: 'Запись через Fresha' } as I18n,
   phone: '+37126835974',
   whatsapp: '+37126835974',
   email: '',
@@ -16,11 +24,11 @@ export const studio = {
   mapsEmbed:
     'https://maps.google.com/maps?q=Jomas+iela+56+Jurmala&t=&z=16&ie=UTF8&iwloc=&output=embed',
   hours: {
-    weekday: 'Mon – Fri: 9:00 – 21:00',
-    friday: 'Sat – Sun: 10:00 – 19:00',
-    sunday: 'Bookings: Fresha',
+    weekday: { en: 'Mon – Fri: 9:00 – 21:00', ru: 'Пн – Пт: 9:00 – 21:00' } as I18n,
+    friday: { en: 'Sat – Sun: 10:00 – 19:00', ru: 'Сб – Вс: 10:00 – 19:00' } as I18n,
+    sunday: { en: 'Bookings: Fresha', ru: 'Запись: Fresha' } as I18n,
   },
-  heroVideo: '/videos/hero.mp4',
+  heroVideo: '/herovideosattva.mp4',
   heroVideoStart: 0,
   aboutVideo: '/videos/interior.mp4',
   cinematicVideo: '/videos/hero.mp4',
@@ -35,19 +43,19 @@ export const studio = {
   },
   menu: {
     Movement: [
-      { name: 'Hatha Yoga', desc: 'Gentle, foundational yoga', price: '€15', img: '/images/class-hatha.jpg' },
-      { name: 'Vinyasa Flow', desc: 'Dynamic breath-linked flow', price: '€15', img: '/images/class-vinyasa.jpg' },
-      { name: 'Fly Yoga', desc: 'Antigravity in silk hammocks', price: '€20', img: '/images/class-fly.jpg' },
+      { name: 'Hatha Yoga', desc: { en: 'Gentle, foundational yoga', ru: 'Мягкая базовая йога' } as I18n, price: '?', img: '/images/class-hatha.jpg' },
+      { name: 'Antigravity Yoga', desc: { en: 'Yoga in silk hammocks', ru: 'Йога в шёлковых гамаках' } as I18n, price: '?', img: '/images/class-fly.jpg' },
+      { name: 'Flow Dance', desc: { en: 'Free, meditative movement', ru: 'Свободное медитативное движение' } as I18n, price: '?', img: '/images/class-dance.jpg' },
     ],
     Healing: [
-      { name: 'Sound Healing', desc: 'Sound bath with bowls & handpan', price: '€25', img: '/images/class-sound.jpg' },
-      { name: 'Massage', desc: 'Therapeutic & relaxation', price: 'From €50', img: '/images/class-massage.jpg' },
-      { name: 'Ayurveda', desc: 'Personal consultation', price: 'From €60', img: '/images/class-ayurveda.jpg' },
+      { name: 'Sound Healing', desc: { en: 'Sound bath with bowls & handpan', ru: 'Звуковая ванна с чашами и хэндпаном' } as I18n, price: '?', img: '/images/class-sound.jpg' },
+      { name: 'Massage', desc: { en: 'Therapeutic & relaxation', ru: 'Лечебный и расслабляющий' } as I18n, price: '?', img: '/images/class-massage.jpg' },
     ],
     Gatherings: [
-      { name: 'Workshops', desc: 'Deep-dive sessions', price: '—', img: '/images/class-workshop.jpg' },
-      { name: 'Retreats', desc: 'Multi-day immersions', price: '—', img: '/images/class-retreat.jpg' },
-      { name: 'Sound Journeys', desc: 'Full sound bath events', price: '—', img: '/images/class-journey.jpg' },
+      { name: 'Workshop', desc: { en: 'Themed intensives — posture clinics, breathwork, philosophy', ru: 'Тематические интенсивы — клиники по позам, дыхательные практики, философия' } as I18n, price: '?', img: '/images/class-workshop.jpg' },
+      { name: 'Seminar', desc: { en: 'Half-day deep-dives with visiting teachers', ru: 'Полудневные погружения с приглашёнными преподавателями' } as I18n, price: '?', img: '/images/class-seminar.jpg' },
+      { name: 'Lecture', desc: { en: 'Talks on yoga philosophy, ayurveda, wellbeing', ru: 'Лекции по философии йоги, аюрведе и здоровому образу жизни' } as I18n, price: '?', img: '/images/class-lecture.jpg' },
+      { name: 'Hang School', desc: { en: 'Hang drum & ethnic instrument lessons', ru: 'Уроки ханга и этнических инструментов' } as I18n, price: '?', img: '/images/class-hang.jpg' },
     ],
   },
   menuImages: [
@@ -57,42 +65,210 @@ export const studio = {
     '/images/13.jpg','/images/14.jpg',
   ],
   reviews: [
-    { stars: 5, text: 'Found my way back to my body here. Vinyasa is exactly what I needed — strong but gentle.', name: 'Anna K.', time: '2 weeks ago', tags: ['Vinyasa', 'Regular'] },
-    { stars: 5, text: 'Sound healing left me feeling like I\'d been gone for a year. Incredible space.', name: 'Māris B.', time: '1 month ago', tags: ['Sound Healing'] },
-    { stars: 5, text: 'Fly Yoga is addictive. Being in a silk hammock is the most fun I\'ve had in years.', name: 'Ieva S.', time: '3 days ago', tags: ['Fly Yoga'] },
-    { stars: 5, text: 'The space is warm, the teachers read the room, I always leave lighter.', name: 'Jānis R.', time: '2 months ago', tags: ['Atmosphere'] },
-    { stars: 5, text: 'Tried barre on a whim — now it\'s my Monday ritual.', name: 'Laura M.', time: '1 week ago', tags: ['Barre'] },
-    { stars: 5, text: 'Art therapy here helped me through a hard season. Kind and genuinely healing.', name: 'Rihards T.', time: '3 months ago', tags: ['Art Therapy'] },
+    {
+      stars: 5,
+      text: {
+        en: 'Found my way back to my body here. Vinyasa is exactly what I needed — strong but gentle.',
+        ru: 'Здесь я снова вернулась к телу. Виньяса — именно то, что было нужно: сильная, но мягкая.',
+      } as I18n,
+      name: 'Anna K.',
+      time: { en: '2 weeks ago', ru: '2 недели назад' } as I18n,
+      tags: [
+        { en: 'Vinyasa', ru: 'Виньяса' } as I18n,
+        { en: 'Regular', ru: 'Регулярно' } as I18n,
+      ],
+    },
+    {
+      stars: 5,
+      text: {
+        en: 'Sound healing left me feeling like I\'d been gone for a year. Incredible space.',
+        ru: 'После звуковой ванны ощущение, будто меня не было целый год. Невероятное пространство.',
+      } as I18n,
+      name: 'Māris B.',
+      time: { en: '1 month ago', ru: '1 месяц назад' } as I18n,
+      tags: [{ en: 'Sound Healing', ru: 'Звуковая ванна' } as I18n],
+    },
+    {
+      stars: 5,
+      text: {
+        en: 'Fly Yoga is addictive. Being in a silk hammock is the most fun I\'ve had in years.',
+        ru: 'Fly Yoga вызывает привыкание. Быть в шёлковом гамаке — самое весёлое, что было со мной за годы.',
+      } as I18n,
+      name: 'Ieva S.',
+      time: { en: '3 days ago', ru: '3 дня назад' } as I18n,
+      tags: [{ en: 'Fly Yoga', ru: 'Fly Yoga' } as I18n],
+    },
+    {
+      stars: 5,
+      text: {
+        en: 'The space is warm, the teachers read the room, I always leave lighter.',
+        ru: 'Пространство тёплое, преподаватели чувствуют группу — всегда уходишь с облегчением.',
+      } as I18n,
+      name: 'Jānis R.',
+      time: { en: '2 months ago', ru: '2 месяца назад' } as I18n,
+      tags: [{ en: 'Atmosphere', ru: 'Атмосфера' } as I18n],
+    },
+    {
+      stars: 5,
+      text: {
+        en: 'Tried barre on a whim — now it\'s my Monday ritual.',
+        ru: 'Попробовала barre спонтанно — теперь это мой понедельничный ритуал.',
+      } as I18n,
+      name: 'Laura M.',
+      time: { en: '1 week ago', ru: '1 неделю назад' } as I18n,
+      tags: [{ en: 'Barre', ru: 'Barre' } as I18n],
+    },
+    {
+      stars: 5,
+      text: {
+        en: 'Art therapy here helped me through a hard season. Kind and genuinely healing.',
+        ru: 'Арт-терапия здесь помогла мне в тяжёлый период. По-доброму и по-настоящему исцеляет.',
+      } as I18n,
+      name: 'Rihards T.',
+      time: { en: '3 months ago', ru: '3 месяца назад' } as I18n,
+      tags: [{ en: 'Art Therapy', ru: 'Арт-терапия' } as I18n],
+    },
   ],
   pillars: [
-    { slug: 'movement', title: 'Movement', description: 'Yoga, dance, barre, stretch.' },
-    { slug: 'healing', title: 'Healing', description: 'Ayurveda, sound healing, massage.' },
-    { slug: 'mind', title: 'Mind', description: 'Art therapy, psychotherapy.' },
-    { slug: 'gatherings', title: 'Gatherings', description: 'Seminars, workshops, retreats.' },
+    {
+      slug: 'movement',
+      title: { en: 'Movement', ru: 'Движение' } as I18n,
+      description: { en: 'Yoga, dance, barre, stretch, fitness.', ru: 'Йога, танец, barre, растяжка, фитнес.' } as I18n,
+    },
+    {
+      slug: 'healing',
+      title: { en: 'Healing', ru: 'Оздоровление' } as I18n,
+      description: { en: 'Sound healing, massage.', ru: 'Звуковые ванны, массаж.' } as I18n,
+    },
+    {
+      slug: 'gatherings',
+      title: { en: 'Gatherings', ru: 'Встречи' } as I18n,
+      description: { en: 'Lectures, seminars, workshops, hang school.', ru: 'Лекции, семинары, воркшопы, школа ханга.' } as I18n,
+    },
   ],
   classes: [
-    { slug: 'hatha-yoga', name: 'Hatha Yoga', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€15', description: 'Gentle, foundational yoga — postures held longer, with emphasis on breath and alignment.' },
-    { slug: 'vinyasa-flow', name: 'Vinyasa Flow', pillar: 'movement', duration: '75 min', level: 'Intermediate', price: '€15', description: 'Dynamic, breath-linked sequences. Builds heat, strength, fluidity.' },
-    { slug: 'fly-yoga', name: 'Fly Yoga', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€20', description: 'Antigravity yoga using silk hammocks. Decompresses the spine.' },
-    { slug: 'barre', name: 'Barre', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€15', description: 'Ballet-inspired conditioning. Low impact, high burn.' },
-    { slug: 'dance', name: 'Dance', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€15', description: 'Free-form movement and choreography.' },
-    { slug: 'stretching', name: 'Stretching', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€15', description: 'Deep passive and active stretching.' },
-    { slug: 'tai-chi-qigong', name: 'Tai Chi & Qi Gong', pillar: 'movement', duration: '60 min', level: 'All levels', price: '€15', description: 'Meditative moving practice.' },
-    { slug: 'sound-healing', name: 'Sound Healing', pillar: 'healing', duration: '60 min', level: 'All levels', price: '€25', description: 'Immersive sound bath with singing bowls and handpan.' },
-    { slug: 'massage', name: 'Massage', pillar: 'healing', duration: '60–90 min', level: 'By appointment', price: 'From €50', description: 'Therapeutic and relaxation massage.' },
-    { slug: 'ayurveda', name: 'Ayurveda Consultation', pillar: 'healing', duration: '90 min', level: 'By appointment', price: 'From €60', description: 'Personal Ayurvedic consultation.' },
-    { slug: 'art-therapy', name: 'Art Therapy', pillar: 'mind', duration: '60 min', level: 'By appointment', price: 'From €45', description: 'Process emotions through creative expression.' },
-    { slug: 'psychotherapy', name: 'Psychotherapy', pillar: 'mind', duration: '50 min', level: 'By appointment', price: 'From €50', description: 'Confidential one-to-one psychotherapy.' },
+    {
+      slug: 'hatha-yoga', name: 'Hatha Yoga', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Gentle, foundational yoga — postures held longer, with emphasis on breath and alignment.', ru: 'Мягкая базовая йога — позы удерживаются дольше, акцент на дыхании и выстраивании.' } as I18n,
+    },
+    {
+      slug: 'kundalini-yoga', name: 'Kundalini Yoga', pillar: 'movement',
+      duration: { en: '75 min', ru: '75 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Dynamic breathwork, mantra, and movement to awaken energy.', ru: 'Динамичные дыхательные техники, мантры и движение для пробуждения энергии.' } as I18n,
+    },
+    {
+      slug: 'kriya-yoga', name: 'Kriya Yoga', pillar: 'movement',
+      duration: { en: '90 min', ru: '90 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Cleansing and energetic practice rooted in classical kriya.', ru: 'Очистительная и энергетическая практика, укоренённая в классической крие.' } as I18n,
+    },
+    {
+      slug: 'yoga-seniors', name: 'Yoga for Seniors', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'Beginner / supported', ru: 'Для новичков / с поддержкой' } as I18n,
+      price: '?',
+      description: { en: 'Gentle, supported practice for older bodies — mobility, breath, ease.', ru: 'Мягкая, поддерживающая практика для старшего возраста — подвижность, дыхание, лёгкость.' } as I18n,
+    },
+    {
+      slug: 'yoga-kids', name: 'Yoga for Kids', pillar: 'movement',
+      duration: { en: '45 min', ru: '45 мин' } as I18n,
+      level: { en: 'Children', ru: 'Дети' } as I18n,
+      price: '?',
+      description: { en: 'Playful movement, breath, and focus games for children.', ru: 'Игровые движения, дыхание и упражнения на внимание для детей.' } as I18n,
+    },
+    {
+      slug: 'antigravity-yoga', name: 'Antigravity Yoga', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Yoga in silk hammocks — decompresses the spine, inverts safely.', ru: 'Йога в шёлковых гамаках — разгружает позвоночник, безопасные инверсии.' } as I18n,
+    },
+    {
+      slug: 'barre', name: 'Barre', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Ballet-inspired conditioning. Low impact, high burn.', ru: 'Тренировка в балетной эстетике. Низкая ударная нагрузка, высокая отдача.' } as I18n,
+    },
+    {
+      slug: 'stretching', name: 'Stretching', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Deep passive and active stretching for mobility and recovery.', ru: 'Глубокая пассивная и активная растяжка для подвижности и восстановления.' } as I18n,
+    },
+    {
+      slug: 'fitness', name: 'Fitness', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Functional strength and conditioning.', ru: 'Функциональная сила и общая физическая подготовка.' } as I18n,
+    },
+    {
+      slug: 'flow-dance', name: 'Flow Dance', pillar: 'movement',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Free-form, meditative movement — body-led, music-driven.', ru: 'Свободное медитативное движение — от тела, под музыку.' } as I18n,
+    },
+    {
+      slug: 'sound-healing', name: 'Sound Healing', pillar: 'healing',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Immersive sound bath with singing bowls and handpan.', ru: 'Погружающая звуковая ванна с поющими чашами и хэндпаном.' } as I18n,
+    },
+    {
+      slug: 'massage', name: 'Massage', pillar: 'healing',
+      duration: { en: '60–90 min', ru: '60–90 мин' } as I18n,
+      level: { en: 'By appointment', ru: 'По записи' } as I18n,
+      price: '?',
+      description: { en: 'Therapeutic and relaxation massage.', ru: 'Лечебный и расслабляющий массаж.' } as I18n,
+    },
+    {
+      slug: 'hang-school', name: 'Hang School', pillar: 'gatherings',
+      duration: { en: '60 min', ru: '60 мин' } as I18n,
+      level: { en: 'All levels', ru: 'Для всех уровней' } as I18n,
+      price: '?',
+      description: { en: 'Hang drum and ethnic instrument lessons — group and private.', ru: 'Уроки игры на ханге и этнических инструментах — группы и индивидуально.' } as I18n,
+    },
+    {
+      slug: 'lecture', name: 'Lecture', pillar: 'gatherings',
+      duration: { en: '60–90 min', ru: '60–90 мин' } as I18n,
+      level: { en: 'Open to all', ru: 'Открыто для всех' } as I18n,
+      price: '?',
+      description: { en: 'Talks on yoga philosophy, ayurveda, and wellbeing.', ru: 'Лекции по философии йоги, аюрведе и здоровому образу жизни.' } as I18n,
+    },
+    {
+      slug: 'seminar', name: 'Seminar', pillar: 'gatherings',
+      duration: { en: 'Half-day', ru: 'Полдня' } as I18n,
+      level: { en: 'Open to all', ru: 'Открыто для всех' } as I18n,
+      price: '?',
+      description: { en: 'Half-day deep-dives with visiting teachers.', ru: 'Полудневные глубокие погружения с приглашёнными преподавателями.' } as I18n,
+    },
+    {
+      slug: 'workshop', name: 'Workshop', pillar: 'gatherings',
+      duration: { en: '2–3 hrs', ru: '2–3 ч' } as I18n,
+      level: { en: 'Open to all', ru: 'Открыто для всех' } as I18n,
+      price: '?',
+      description: { en: 'Themed intensives — posture clinics, breathwork, philosophy.', ru: 'Тематические интенсивы — клиники по позам, дыхательные практики, философия.' } as I18n,
+    },
   ],
-  scheduleMonth: 'April',
+  scheduleMonth: { en: 'April', ru: 'Апрель' } as I18n,
   schedule: [
-    { day: 'Monday', entries: [
+    { day: { en: 'Monday', ru: 'Понедельник' } as I18n, entries: [
       { time: '8:50 – 9:50', class: 'Barre', teacher: 'Irina' },
       { time: '10:00 – 11:30', class: 'Yoga', teacher: 'Santa' },
       { time: '18:00 – 19:00', class: 'Dance', teacher: 'Annila' },
       { time: '20:00 – 21:00', class: 'Dance', teacher: 'Annila' },
     ]},
-    { day: 'Tuesday', entries: [
+    { day: { en: 'Tuesday', ru: 'Вторник' } as I18n, entries: [
       { time: '9:00 – 10:00', class: 'Fitness', teacher: 'Marija' },
       { time: '10:15 – 11:45', class: 'Yoga for Beginners', teacher: 'Juliana' },
       { time: '14:00 – 15:30', class: 'Yoga for Kids' },
@@ -100,14 +276,14 @@ export const studio = {
       { time: '17:00 – 18:00', class: 'Hang School' },
       { time: '18:30 – 20:00', class: 'Hatha Yoga', teacher: 'Iveta' },
     ]},
-    { day: 'Wednesday', entries: [
+    { day: { en: 'Wednesday', ru: 'Среда' } as I18n, entries: [
       { time: '9:00 – 11:00', class: 'Barre / Stretching', teacher: 'Irina' },
       { time: '11:30 – 13:00', class: 'Tai Chi', teacher: 'Marija' },
       { time: '15:00 – 16:30', class: 'Fly Yoga for Kids' },
       { time: '18:00 – 19:30', class: 'Yoga', teacher: 'Nelly' },
       { time: '20:00 – 21:00', class: 'Dance', teacher: 'Anila' },
     ]},
-    { day: 'Thursday', entries: [
+    { day: { en: 'Thursday', ru: 'Четверг' } as I18n, entries: [
       { time: '6:00 – 7:30', class: 'Kriya Yoga', teacher: 'Dipika' },
       { time: '9:15 – 10:30', class: 'Fitness', teacher: 'Marija' },
       { time: '10:30 – 11:50', class: 'Vinyasa Yoga', teacher: 'Santa' },
@@ -115,35 +291,68 @@ export const studio = {
       { time: '17:30 – 19:00', class: 'Hatha Yoga', teacher: 'Iveta' },
       { time: '18:30 – 20:00', class: 'Antigravity Yoga + Sound Healing', teacher: 'Juliana' },
     ]},
-    { day: 'Friday', entries: [
+    { day: { en: 'Friday', ru: 'Пятница' } as I18n, entries: [
       { time: '9:00 – 12:00', class: 'Barre / Stretching', teacher: 'Irina' },
       { time: '12:15 – 19:00', class: 'Massage', teacher: 'Natalya' },
       { time: '19:00 – 21:00', class: 'Antigravity + Flow Dance + Sound Healing', teacher: 'Juliana' },
     ]},
-    { day: 'Saturday', entries: [
+    { day: { en: 'Saturday', ru: 'Суббота' } as I18n, entries: [
       { time: '9:00 – 10:30', class: 'Vinyasa Yoga', teacher: 'Santa' },
       { time: '10:30 – 12:00', class: 'Yoga', teacher: 'Nelli' },
       { time: '19:00 – 20:30', class: 'Antigravity Yoga' },
       { time: '20:30 – 22:00', class: 'Flow Meditation Dance + Sound Healing' },
     ]},
-    { day: 'Sunday', entries: [
+    { day: { en: 'Sunday', ru: 'Воскресенье' } as I18n, entries: [
       { time: '10:00 – 11:30', class: 'Yoga for Beginners + Antigravity', teacher: 'Juliana' },
       { time: '12:00 – 13:00', class: 'Hang — Ethnic Instruments School' },
     ]},
   ],
   faqs: [
-    { q: 'I have never done yoga before — is that okay?', a: 'Absolutely. Most classes are all-levels. Hatha Yoga and Stretching are the easiest starting points.' },
-    { q: 'Do I need to book in advance?', a: 'For group classes, walk-ins are welcome but booking ahead guarantees your spot. Individual sessions must be booked.' },
-    { q: 'What should I bring?', a: 'Comfortable clothing and water. We provide mats, blocks, bolsters, and straps.' },
-    { q: 'Can I pay per class, or do I need a membership?', a: 'Both. Drop-ins are welcome. Class packs and monthly memberships offer better value for regulars.' },
-    { q: 'What language are classes in?', a: 'Latvian, English, and Russian — teachers switch based on who\'s in the room.' },
-    { q: 'Where do I change?', a: 'Changing areas are on-site. We recommend arriving ready if possible.' },
-    { q: 'Is there parking?', a: 'Street parking is available on Jomas iela.' },
+    {
+      q: { en: 'I have never done yoga before — is that okay?', ru: 'Я никогда не занимался йогой — это нормально?' } as I18n,
+      a: { en: 'Absolutely. Most classes are all-levels. Hatha Yoga and Stretching are the easiest starting points.', ru: 'Абсолютно. Большинство занятий для всех уровней. Хатха-йога и растяжка — самые простые для старта.' } as I18n,
+    },
+    {
+      q: { en: 'Do I need to book in advance?', ru: 'Нужно ли записываться заранее?' } as I18n,
+      a: { en: 'For group classes, walk-ins are welcome but booking ahead guarantees your spot. Individual sessions must be booked.', ru: 'На групповые занятия можно приходить без записи, но запись гарантирует место. Индивидуальные сессии — только по записи.' } as I18n,
+    },
+    {
+      q: { en: 'What should I bring?', ru: 'Что взять с собой?' } as I18n,
+      a: { en: 'Comfortable clothing and water. We provide mats, blocks, bolsters, and straps.', ru: 'Удобную одежду и воду. Коврики, блоки, болстеры и ремни мы предоставляем.' } as I18n,
+    },
+    {
+      q: { en: 'Can I pay per class, or do I need a membership?', ru: 'Можно оплачивать разово или нужен абонемент?' } as I18n,
+      a: { en: 'Both. Drop-ins are welcome. Class packs and monthly memberships offer better value for regulars.', ru: 'И то, и другое. Разовые занятия — пожалуйста. Пакеты и месячные абонементы выгоднее для постоянных.' } as I18n,
+    },
+    {
+      q: { en: 'What language are classes in?', ru: 'На каком языке проходят занятия?' } as I18n,
+      a: { en: 'Latvian, English, and Russian — teachers switch based on who\'s in the room.', ru: 'На латышском, английском и русском — преподаватели переключаются в зависимости от группы.' } as I18n,
+    },
+    {
+      q: { en: 'Where do I change?', ru: 'Где переодеться?' } as I18n,
+      a: { en: 'Changing areas are on-site. We recommend arriving ready if possible.', ru: 'Раздевалки есть в студии. По возможности лучше приходить уже готовым.' } as I18n,
+    },
+    {
+      q: { en: 'Is there parking?', ru: 'Есть ли парковка?' } as I18n,
+      a: { en: 'Street parking is available on Jomas iela.', ru: 'Есть парковка на улице Йомас.' } as I18n,
+    },
   ],
   announcements: [
-    { date: '2026-04-22', title: 'Irina on vacation', body: 'Teacher Irina is away from April 25 to May 10. Barre and Stretching classes will be covered by substitute teachers — check the schedule or Instagram for updates.', banner: '/banners/irina-vacation.jpg' },
-    { date: '2026-04-18', title: 'New: Antigravity + Sound Healing', body: 'A new combined class every Thursday evening with Juliana — antigravity flow followed by a sound bath. Limited hammocks, book ahead.', banner: '/banners/antigravity-sound.jpg' },
-  ] as { date: string; title: string; body: string; banner?: string }[],
+    {
+      date: '2026-04-25',
+      title: { en: '"Uzplaukt sevī" — Apr 25', ru: '"Uzplaukt sevī" — 25 апреля' } as I18n,
+      body: { en: 'Plan time for yourself — don\'t wait for "when there\'s finally time". Feel, surrender, bloom ✺See you Saturday, April 25 at "Uzplaukt sevī".', ru: 'Запланируйте время для себя — не ждите, «когда наконец будет время». Чувствовать, отдаваться, расцветать ✺Встречаемся в субботу, 25 апреля на «Uzplaukt sevī».' } as I18n,
+      banner: '/banners/uzplaukt-sevi.jpg',
+      video: '/announcements/announcement1.mp4',
+    },
+    {
+      date: '2026-04-18',
+      title: { en: 'Rent the studio', ru: 'Аренда студии' } as I18n,
+      body: { en: 'A warm, central Jūrmala room — available for workshops, retreats, photoshoots, and private events between classes. Hourly or full-day. Write us on WhatsApp for availability and rates.', ru: 'Тёплый зал в центре Юрмалы — для воркшопов, ретритов, фотосъёмок и частных мероприятий между занятиями. Почасово или на полный день. Напишите в WhatsApp — расскажем про свободные слоты и цены.' } as I18n,
+      banner: '/banners/rent-studio.jpg',
+      video: '/announcements/announcement2.mp4#t=3',
+    },
+  ] as { date: string; title: I18n; body: I18n; banner?: string; video?: string }[],
   teachers: [
     { name: 'Irina', specialties: ['Barre', 'Stretching'] },
     { name: 'Santa', specialties: ['Vinyasa Yoga', 'Hatha Yoga'] },

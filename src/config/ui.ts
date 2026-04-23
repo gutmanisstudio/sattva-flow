@@ -1,0 +1,205 @@
+import type { I18n } from './i18n'
+
+export const ui = {
+  // Nav
+  navHome: { en: 'Home', ru: 'Главная', lv: 'Sākums' } as I18n,
+  navAbout: { en: 'About', ru: 'О нас', lv: 'Par mums' } as I18n,
+  navClasses: { en: 'Classes', ru: 'Занятия', lv: 'Nodarbības' } as I18n,
+  navRental: { en: 'Rental', ru: 'Аренда', lv: 'Noma' } as I18n,
+  navSchedule: { en: 'Schedule', ru: 'Расписание', lv: 'Grafiks' } as I18n,
+  navVisit: { en: 'Visit', ru: 'Контакты', lv: 'Kontakti' } as I18n,
+  navCall: { en: 'Call', ru: 'Позвонить', lv: 'Zvanīt' } as I18n,
+  book: { en: 'Book', ru: 'Записаться', lv: 'Pieteikties' } as I18n,
+  bookAClass: { en: 'Book a class', ru: 'Записаться на занятие', lv: 'Pieteikties nodarbībai' } as I18n,
+  findUs: { en: 'Find us', ru: 'Как найти', lv: 'Kā atrast' } as I18n,
+  callUs: { en: 'Call us', ru: 'Позвонить нам', lv: 'Zvanīt mums' } as I18n,
+
+  // Hero
+  heroKicker: { en: 'Holistic · Jūrmala', ru: 'Холистика · Юрмала', lv: 'Holistiska · Jūrmala' } as I18n,
+
+  // MenuSection
+  menuKicker: { en: 'Classes', ru: 'Занятия', lv: 'Nodarbības' } as I18n,
+  menuTitle1: { en: 'THREE', ru: 'ТРИ', lv: 'TRĪS' } as I18n,
+  menuTitle2: { en: 'PILLARS', ru: 'ОПОРЫ', lv: 'BALSTI' } as I18n,
+  menuSub: {
+    en: 'Movement, healing, and gatherings. Sixteen offerings across the week.',
+    ru: 'Движение, оздоровление и встречи. Шестнадцать направлений в неделю.',
+    lv: 'Kustība, dziedināšana un kopā būšana. Sešpadsmit piedāvājumi nedēļas laikā.',
+  } as I18n,
+  menuMoreKicker: { en: 'More offerings', ru: 'Другие направления', lv: 'Citi piedāvājumi' } as I18n,
+  menuMoreTitle: { en: 'HEALING · GATHERINGS', ru: 'ОЗДОРОВЛЕНИЕ · ВСТРЕЧИ', lv: 'DZIEDINĀŠANA · KOPĀ BŪŠANA' } as I18n,
+
+  // About (home)
+  aboutKicker: { en: 'About', ru: 'О нас', lv: 'Par mums' } as I18n,
+  aboutTitle1: { en: 'SATTVA', ru: 'SATTVA', lv: 'SATTVA' } as I18n,
+  aboutTitle2: { en: 'STUDIO', ru: 'СТУДИЯ', lv: 'STUDIJA' } as I18n,
+  aboutDesc: {
+    en: 'SattvaFlow is a small studio in the heart of Jūrmala — a room that changes with the practice. Movement, healing, and the gatherings that hold it together.',
+    ru: 'SattvaFlow — небольшая студия в сердце Юрмалы. Пространство, которое меняется вместе с практикой. Движение, оздоровление и встречи, которые всё объединяют.',
+    lv: 'SattvaFlow ir neliela studija Jūrmalas sirdī — telpa, kas mainās līdzi praksei. Kustība, dziedināšana un kopā būšana, kas to visu savieno.',
+  } as I18n,
+  aboutFeature1Title: { en: 'Bookings & drop-ins', ru: 'Запись и разовые визиты', lv: 'Pieteikšanās un atnākšana' } as I18n,
+  aboutFeature1Desc: { en: 'Reserve ahead or walk in when there\'s space. Everything lives on Fresha.', ru: 'Бронируйте заранее или приходите при наличии мест. Всё через Fresha.', lv: 'Rezervē iepriekš vai atnāc, kad ir brīvas vietas. Viss notiek Fresha platformā.' } as I18n,
+  aboutFeature2Title: { en: 'A room that changes', ru: 'Пространство меняется', lv: 'Telpa, kas mainās' } as I18n,
+  aboutFeature2Desc: { en: 'Morning barre, afternoon sound bath, evening flow — one small studio, many practices.', ru: 'Утром barre, днём звуковая ванна, вечером флоу — одна студия, много практик.', lv: 'Rītā barre, pēcpusdienā skaņu vanna, vakarā flow — viena maza studija, daudzas prakses.' } as I18n,
+  aboutFeature3Title: { en: 'Private sessions', ru: 'Индивидуальные сессии', lv: 'Individuālas nodarbības' } as I18n,
+  aboutFeature3Desc: { en: 'One-to-one yoga, massage, art therapy, and ayurveda consultations — by appointment.', ru: 'Персональная йога, массаж, арт-терапия и консультации по аюрведе — по записи.', lv: 'Individuāla joga, masāža, mākslas terapija un ājurvēdas konsultācijas — pēc pieraksta.' } as I18n,
+  aboutFeature4Title: { en: 'Retreats & workshops', ru: 'Ретриты и воркшопы', lv: 'Retrīti un darbnīcas' } as I18n,
+  aboutFeature4Desc: { en: 'Deeper dives, several times a year. Follow along on Instagram.', ru: 'Глубокие погружения несколько раз в год. Следите за новостями в Instagram.', lv: 'Dziļāki nirieni vairākas reizes gadā. Seko Instagram, lai neko nepalaistu garām.' } as I18n,
+  aboutCta: { en: 'Our story', ru: 'Наша история', lv: 'Mūsu stāsts' } as I18n,
+
+  // Schedule
+  scheduleWeekly: { en: 'Weekly rhythm', ru: 'Ритм недели', lv: 'Nedēļas ritms' } as I18n,
+  scheduleTitle1: { en: 'THE', ru: '', lv: '' } as I18n,
+  scheduleTitle2: { en: 'SCHEDULE', ru: 'РАСПИСАНИЕ', lv: 'GRAFIKS' } as I18n,
+  scheduleSub: {
+    en: 'The current month at the studio. Follow',
+    ru: 'Текущий месяц в студии. Следите за',
+    lv: 'Šī mēneša plāns studijā. Seko',
+  } as I18n,
+  scheduleSubAfter: {
+    en: 'for last-minute changes.',
+    ru: 'для последних изменений.',
+    lv: 'lai uzzinātu par izmaiņām.',
+  } as I18n,
+
+  // Faq
+  faqKicker: { en: 'Questions', ru: 'Вопросы', lv: 'Jautājumi' } as I18n,
+  faqTitle1: { en: 'GOOD TO', ru: 'ПОЛЕЗНО', lv: 'NODERĪGI' } as I18n,
+  faqTitle2: { en: 'KNOW', ru: 'ЗНАТЬ', lv: 'ZINĀT' } as I18n,
+
+  // Announcements
+  annKicker: { en: 'What\'s on', ru: 'Анонсы', lv: 'Aktualitātes' } as I18n,
+  annTitle: { en: 'ANNOUNCEMENTS', ru: 'ОБЪЯВЛЕНИЯ', lv: 'PAZIŅOJUMI' } as I18n,
+  annSub: { en: 'News from the studio — teacher updates, new classes, events and retreats.', ru: 'Новости студии — изменения у преподавателей, новые занятия, события и ретриты.', lv: 'Studijas jaunumi — pasniedzēju izmaiņas, jaunas nodarbības, pasākumi un retrīti.' } as I18n,
+  annFollowIg: { en: 'Follow for daily updates on Instagram →', ru: 'Следите за обновлениями в Instagram →', lv: 'Seko ikdienas jaunumiem Instagram →' } as I18n,
+
+  // Reviews
+  reviewsKicker: { en: 'Testimonials', ru: 'Отзывы', lv: 'Atsauksmes' } as I18n,
+  reviewsTitle1: { en: 'WHAT OUR', ru: 'ЧТО ГОВОРЯТ НАШИ', lv: 'KO SAKA MŪSU' } as I18n,
+  reviewsTitle2: { en: 'STUDENTS', ru: 'УЧЕНИКИ', lv: 'STUDENTI' } as I18n,
+  reviewsTitle3: { en: 'SAY', ru: '', lv: '' } as I18n,
+  reviewsSub: { en: 'Don\'t take our word — here\'s what our students say.', ru: 'Не верьте нам на слово — вот что говорят наши ученики.', lv: 'Neticiet mūsu vārdiem — lūk, ko saka mūsu studenti.' } as I18n,
+  reviewsCta: { en: 'Read all on Google →', ru: 'Все отзывы на Google →', lv: 'Visas atsauksmes Google →' } as I18n,
+
+  // Contact / Visit
+  visitLabel: { en: 'Visit', ru: 'Визит', lv: 'Apmeklējums' } as I18n,
+  visitTitle1: { en: 'COME BY', ru: 'ЗАГЛЯНИТЕ В', lv: 'IENĀC' } as I18n,
+  visitTitle2: { en: 'THE STUDIO', ru: 'СТУДИЮ', lv: 'STUDIJĀ' } as I18n,
+  visitDesc: { en: 'Questions about classes, bookings, or private sessions? Drop us a line — or just come by before class.', ru: 'Вопросы про занятия, запись или индивидуальные сессии? Напишите нам — или зайдите перед занятием.', lv: 'Jautājumi par nodarbībām, pieteikšanos vai individuālām sesijām? Uzraksti mums — vai vienkārši ienāc pirms nodarbības.' } as I18n,
+  visitWhatsapp: { en: 'Message on WhatsApp', ru: 'Написать в WhatsApp', lv: 'Rakstīt WhatsApp' } as I18n,
+  ctaLabel: { en: 'Call', ru: 'Телефон', lv: 'Tālrunis' } as I18n,
+  ctaWaLabel: { en: 'WhatsApp', ru: 'WhatsApp', lv: 'WhatsApp' } as I18n,
+  ctaMapsLabel: { en: 'Find us', ru: 'Как найти', lv: 'Kā atrast' } as I18n,
+  ctaHoursLabel: { en: 'Hours', ru: 'Часы', lv: 'Darba laiks' } as I18n,
+  ctaReadyTitle1: { en: 'READY TO', ru: 'ГОТОВЫ', lv: 'GATAVI' } as I18n,
+  ctaReadyTitle2: { en: 'BEGIN?', ru: 'НАЧАТЬ?', lv: 'SĀKT?' } as I18n,
+  ctaReadySub: { en: 'Your next class is one breath away.', ru: 'Ваше следующее занятие — на расстоянии одного вдоха.', lv: 'Tava nākamā nodarbība ir vienas elpas attālumā.' } as I18n,
+  ctaExplore: { en: 'Explore classes', ru: 'К занятиям', lv: 'Uz nodarbībām' } as I18n,
+
+  // Footer
+  footerBlurb: { en: 'Holistic studio · body & soul. Movement, healing, and gatherings in the heart of Jūrmala.', ru: 'Холистическая студия · тело и душа. Движение, оздоровление и встречи в сердце Юрмалы.', lv: 'Holistiska studija · ķermenis un dvēsele. Kustība, dziedināšana un kopā būšana Jūrmalas sirdī.' } as I18n,
+  footerExplore: { en: 'Explore', ru: 'Разделы', lv: 'Sadaļas' } as I18n,
+  footerHours: { en: 'Hours', ru: 'Часы работы', lv: 'Darba laiks' } as I18n,
+  footerContact: { en: 'Contact', ru: 'Контакты', lv: 'Kontakti' } as I18n,
+  footerBook: { en: 'Book', ru: 'Записаться', lv: 'Pieteikties' } as I18n,
+  footerRights: { en: 'All rights reserved.', ru: 'Все права защищены.', lv: 'Visas tiesības aizsargātas.' } as I18n,
+
+  // Classes index + detail
+  classesOfferingsKicker: { en: 'Offerings', ru: 'Направления', lv: 'Piedāvājumi' } as I18n,
+  classesAll1: { en: 'ALL', ru: 'ВСЕ', lv: 'VISAS' } as I18n,
+  classesAll2: { en: 'CLASSES', ru: 'ЗАНЯТИЯ', lv: 'NODARBĪBAS' } as I18n,
+  classesSub: { en: 'Sixteen offerings across movement, healing, and gatherings. Drop-ins welcome, class packs for regulars, individual sessions by appointment.', ru: 'Шестнадцать направлений — движение, оздоровление и встречи. Разовые визиты — пожалуйста, пакеты для постоянных, индивидуальные сессии по записи.', lv: 'Sešpadsmit piedāvājumi — kustība, dziedināšana un kopā būšana. Atnākšana gaidīta, abonementi pastāvīgajiem, individuālas sesijas pēc pieraksta.' } as I18n,
+  pillarLabel: { en: 'Pillar', ru: 'Опора', lv: 'Balsts' } as I18n,
+  openLabel: { en: 'Open →', ru: 'Открыть →', lv: 'Atvērt →' } as I18n,
+  readyBook1: { en: 'READY TO', ru: 'ГОТОВЫ', lv: 'GATAVI' } as I18n,
+  readyBook2: { en: 'BOOK?', ru: 'ЗАПИСАТЬСЯ?', lv: 'PIETEIKTIES?' } as I18n,
+  readyBookSub: { en: 'Check the weekly schedule or reach us directly on WhatsApp.', ru: 'Посмотрите расписание или напишите нам в WhatsApp.', lv: 'Apskati nedēļas grafiku vai raksti mums WhatsApp.' } as I18n,
+  viewSchedule: { en: 'View schedule', ru: 'Расписание', lv: 'Grafiks' } as I18n,
+  allClasses: { en: '← All classes', ru: '← Все занятия', lv: '← Visas nodarbības' } as I18n,
+  durationLabel: { en: 'Duration', ru: 'Длительность', lv: 'Ilgums' } as I18n,
+  levelLabel: { en: 'Level', ru: 'Уровень', lv: 'Līmenis' } as I18n,
+  priceLabel: { en: 'Price', ru: 'Цена', lv: 'Cena' } as I18n,
+  bookThisClass: { en: 'Book this class', ru: 'Записаться', lv: 'Pieteikties nodarbībai' } as I18n,
+  askQuestion: { en: 'Ask a question', ru: 'Задать вопрос', lv: 'Uzdot jautājumu' } as I18n,
+  moreIn: { en: 'More in', ru: 'Ещё в', lv: 'Vairāk sadaļā' } as I18n,
+  backHome: { en: '← Back to home', ru: '← На главную', lv: '← Uz sākumu' } as I18n,
+
+  // About page
+  aboutPageKicker: { en: 'About the studio', ru: 'О студии', lv: 'Par studiju' } as I18n,
+  aboutPageTitle1: { en: 'OUR', ru: 'НАША', lv: 'MŪSU' } as I18n,
+  aboutPageTitle2: { en: 'STORY', ru: 'ИСТОРИЯ', lv: 'STĀSTS' } as I18n,
+  aboutPageIntro: {
+    en: 'SattvaFlow is a small holistic studio in the heart of Jūrmala. We opened with one belief: body, mind, and community are one practice. On any given day the room is hosting yoga, barre, dance, sound healing, massage, and therapy — taught by people who read the room and meet you where you are.',
+    ru: 'SattvaFlow — небольшая холистическая студия в самом сердце Юрмалы. Мы открылись с одной идеей: тело, ум и сообщество — это одна практика. В любой день в зале проходят йога, barre, танец, звуковые ванны, массаж и терапия — с преподавателями, которые чувствуют группу и встречают вас там, где вы есть.',
+    lv: 'SattvaFlow ir neliela holistiska studija Jūrmalas sirdī. Mēs atvērāmies ar vienu pārliecību: ķermenis, prāts un kopiena ir viena prakse. Jebkurā dienā telpā notiek joga, barre, deja, skaņu dziedināšana, masāža un terapija — ar pasniedzējiem, kuri jūt grupu un sastop tevi tur, kur tu esi.',
+  } as I18n,
+  aboutPanel1Kicker: { en: 'The space', ru: 'Пространство', lv: 'Telpa' } as I18n,
+  aboutPanel1Title: { en: 'ONE ROOM, MANY PRACTICES', ru: 'ОДИН ЗАЛ — МНОГО ПРАКТИК', lv: 'VIENA TELPA, DAUDZAS PRAKSES' } as I18n,
+  aboutPanel1Desc: {
+    en: 'A warm, central Jūrmala studio on Jomas iela. Oak floors, soft light, mirrors, and a full sound system. The room shifts with the day — morning barre, afternoon sound bath, evening flow.',
+    ru: 'Тёплая студия в центре Юрмалы на улице Йомас. Дубовые полы, мягкий свет, зеркала и полноценная звуковая система. Зал меняется по ходу дня — утром barre, днём звуковая ванна, вечером флоу.',
+    lv: 'Silta studija Jūrmalas centrā, Jomas ielā. Ozola grīdas, maiga gaisma, spoguļi un pilna skaņu sistēma. Telpa mainās dienas gaitā — rītā barre, pēcpusdienā skaņu vanna, vakarā flow.',
+  } as I18n,
+  aboutPanel2Kicker: { en: 'The practice', ru: 'Практика', lv: 'Prakse' } as I18n,
+  aboutPanel2Title: { en: 'BODY, MIND, COMMUNITY', ru: 'ТЕЛО, УМ, СООБЩЕСТВО', lv: 'ĶERMENIS, PRĀTS, KOPIENA' } as I18n,
+  aboutPanel2Desc: {
+    en: 'Movement, healing, and the quieter work of mind — we teach all three because they belong together. Classes for every level, private sessions when you need deeper attention, and gatherings that remind you the practice isn\'t solitary.',
+    ru: 'Движение, оздоровление и более тихая работа ума — мы преподаём все три, потому что они неотделимы. Занятия для любого уровня, индивидуальные сессии для более глубокого внимания и встречи, напоминающие, что практика не одинока.',
+    lv: 'Kustība, dziedināšana un klusāks prāta darbs — mēs mācām visus trīs, jo tie ir nedalāmi. Nodarbības katram līmenim, individuālas sesijas dziļākai uzmanībai, un kopā būšana, kas atgādina, ka prakse nav vientuļa.',
+  } as I18n,
+  teachersKicker: { en: 'Our teachers', ru: 'Преподаватели', lv: 'Pasniedzēji' } as I18n,
+  teachersTitle1: { en: 'THE', ru: 'НАША', lv: 'MŪSU' } as I18n,
+  teachersTitle2: { en: 'TEAM', ru: 'КОМАНДА', lv: 'KOMANDA' } as I18n,
+  teachersSub: { en: 'A rotating group of teachers and practitioners — each bringing their own lineage and language.', ru: 'Меняющаяся команда преподавателей и практиков — каждый со своей традицией и языком.', lv: 'Mainīga pasniedzēju un praktiķu komanda — katrs ar savu tradīciju un valodu.' } as I18n,
+  comeBy: { en: 'Come by', ru: 'Заглянуть', lv: 'Ienāc' } as I18n,
+  readyBeginSub: { en: 'Your first class is one breath away — book online, or drop by the studio.', ru: 'Первое занятие — на расстоянии одного вдоха. Запишитесь онлайн или зайдите в студию.', lv: 'Tava pirmā nodarbība ir vienas elpas attālumā — piesakies tiešsaistē vai ienāc studijā.' } as I18n,
+  visitTheStudio: { en: 'Visit the studio', ru: 'Зайти в студию', lv: 'Apmeklēt studiju' } as I18n,
+
+  // Rental
+  rentalLabel: { en: 'Space rental', ru: 'Аренда зала', lv: 'Telpu noma' } as I18n,
+  rentalLabelLv: { en: 'Telpu noma', ru: 'Telpu noma', lv: 'Telpu noma' } as I18n,
+  rentalTitle1: { en: 'RENT', ru: 'АРЕНДА', lv: 'ĪRĒT' } as I18n,
+  rentalTitle2: { en: 'THE SPACE', ru: 'ЗАЛА', lv: 'TELPU' } as I18n,
+  rentalHomeDesc: { en: 'The studio is available for workshops, retreats, photoshoots, and private events when it\'s not in class. A warm, central Jūrmala room — everything you need, nothing you don\'t.', ru: 'Студия доступна для воркшопов, ретритов, фотосъёмок и частных мероприятий вне занятий. Тёплый зал в центре Юрмалы — всё, что нужно, и ничего лишнего.', lv: 'Studija pieejama darbnīcām, retrītiem, fotosesijām un privātiem pasākumiem, kad nenotiek nodarbības. Silta telpa Jūrmalas centrā — viss, kas vajadzīgs, nekā lieka.' } as I18n,
+  rentalPageDesc: { en: 'The SattvaFlow studio is available for workshops, retreats, photoshoots, and private events when it\'s not in class. Warm, central Jūrmala — everything you need, nothing you don\'t.', ru: 'Студия SattvaFlow доступна для воркшопов, ретритов, фотосъёмок и частных мероприятий вне занятий. Тёплый центр Юрмалы — всё необходимое, ничего лишнего.', lv: 'SattvaFlow studija pieejama darbnīcām, retrītiem, fotosesijām un privātiem pasākumiem starp nodarbībām. Silts Jūrmalas centrs — viss vajadzīgais, nekā lieka.' } as I18n,
+  rentalFeat1Title: { en: 'Workshops & retreats', ru: 'Воркшопы и ретриты', lv: 'Darbnīcas un retrīti' } as I18n,
+  rentalFeat1Desc: { en: 'Hourly or full-day blocks. Capacity up to 15.', ru: 'Почасово или на полный день. Вместимость до 15 человек.', lv: 'Pa stundām vai uz visu dienu. Ietilpība līdz 15 cilvēkiem.' } as I18n,
+  rentalFeat2Title: { en: 'Events & shoots', ru: 'События и съёмки', lv: 'Pasākumi un filmēšana' } as I18n,
+  rentalFeat2Desc: { en: 'Photoshoots, launches, intimate gatherings — natural light, warm floors.', ru: 'Фотосессии, презентации, камерные встречи — естественный свет, тёплые полы.', lv: 'Fotosesijas, atklāšanas, intīmas tikšanās — dabiska gaisma, siltas grīdas.' } as I18n,
+  rentalFeat3Title: { en: 'Flexible hours', ru: 'Гибкие часы', lv: 'Elastīgs laiks' } as I18n,
+  rentalFeat3Desc: { en: 'Most availability mornings and late evenings, between classes.', ru: 'Больше всего слотов утром и поздним вечером, между занятиями.', lv: 'Visvairāk brīvā laika no rītiem un vēlos vakaros, starp nodarbībām.' } as I18n,
+  seeSpace: { en: 'See the space', ru: 'Посмотреть зал', lv: 'Apskatīt telpu' } as I18n,
+  rentalPanel1Kicker: { en: 'The main floor', ru: 'Основной зал', lv: 'Galvenā telpa' } as I18n,
+  rentalPanel1Title: { en: 'A WARM, OPEN PRACTICE SPACE', ru: 'ТЁПЛОЕ, ОТКРЫТОЕ ПРОСТРАНСТВО', lv: 'SILTA, ATVĒRTA PRAKSES TELPA' } as I18n,
+  rentalPanel1Desc: { en: 'Oak floors, natural light, mirrors, and a full sound system. Ideal for yoga teacher trainings, workshops, rehearsals, and photoshoots. Capacity up to 15.', ru: 'Дубовые полы, естественный свет, зеркала и полноценная звуковая система. Идеально для обучения преподавателей йоги, воркшопов, репетиций и фотосъёмок. Вместимость до 15 человек.', lv: 'Ozola grīdas, dabiska gaisma, spoguļi un pilna skaņu sistēma. Lieliski piemērota jogas pasniedzēju apmācībai, darbnīcām, mēģinājumiem un fotosesijām. Ietilpība līdz 15 cilvēkiem.' } as I18n,
+  rentalPanel2Kicker: { en: 'Atmosphere', ru: 'Атмосфера', lv: 'Atmosfēra' } as I18n,
+  rentalPanel2Title: { en: 'QUIET MORNINGS, GOLDEN EVENINGS', ru: 'ТИХИЕ УТРА, ЗОЛОТЫЕ ВЕЧЕРА', lv: 'KLUSI RĪTI, ZELTAINI VAKARI' } as I18n,
+  rentalPanel2Desc: { en: 'The space shifts through the day. Morning light for barre and vinyasa, softer afternoons, and warm evenings perfect for sound baths and intimate gatherings.', ru: 'Пространство меняется в течение дня. Утренний свет для barre и виньясы, мягкие дневные часы и тёплые вечера — идеально для звуковых ванн и камерных встреч.', lv: 'Telpa mainās dienas gaitā. Rīta gaisma barre un vinjasai, maigākas pēcpusdienas un silti vakari — lieliski piemēroti skaņu vannām un intīmām tikšanās.' } as I18n,
+  inquire: { en: 'Inquire', ru: 'Узнать', lv: 'Uzzināt' } as I18n,
+  bookSpace1: { en: 'BOOK THE', ru: 'ЗАБРОНИРОВАТЬ', lv: 'REZERVĒT' } as I18n,
+  bookSpace2: { en: 'SPACE', ru: 'ЗАЛ', lv: 'TELPU' } as I18n,
+  bookSpaceDesc: { en: 'Tell us when and what you have in mind. We\'ll reply on WhatsApp with availability and rates.', ru: 'Напишите, когда и что вы планируете. Мы ответим в WhatsApp с доступностью и ценами.', lv: 'Pastāsti, kad un kas tev prātā. Mēs atbildēsim WhatsApp ar pieejamību un cenām.' } as I18n,
+
+  // Reservation form
+  bookLabel: { en: 'Book', ru: 'Запись', lv: 'Pieteikšanās' } as I18n,
+  joinClassA: { en: 'JOIN', ru: 'ЗАПИСАТЬСЯ', lv: 'PIETEIKTIES' } as I18n,
+  joinClassB: { en: 'A CLASS', ru: 'НА ЗАНЯТИЕ', lv: 'NODARBĪBAI' } as I18n,
+  addressLabel: { en: 'Address', ru: 'Адрес', lv: 'Adrese' } as I18n,
+  hoursLabel: { en: 'Hours', ru: 'Часы', lv: 'Darba laiks' } as I18n,
+  phoneLabel: { en: 'Phone', ru: 'Телефон', lv: 'Tālrunis' } as I18n,
+  bookClassKicker: { en: 'Book a class', ru: 'Записаться на занятие', lv: 'Pieteikties nodarbībai' } as I18n,
+  reserveSpot: { en: 'Reserve your spot', ru: 'Забронировать место', lv: 'Rezervēt vietu' } as I18n,
+  firstName: { en: 'First name', ru: 'Имя', lv: 'Vārds' } as I18n,
+  lastName: { en: 'Last name', ru: 'Фамилия', lv: 'Uzvārds' } as I18n,
+  dateLabel: { en: 'Date', ru: 'Дата', lv: 'Datums' } as I18n,
+  classLabel: { en: 'Class', ru: 'Занятие', lv: 'Nodarbība' } as I18n,
+  spotsLabel: { en: 'Spots', ru: 'Мест', lv: 'Vietas' } as I18n,
+  notesLabel: { en: 'Notes', ru: 'Комментарий', lv: 'Piezīmes' } as I18n,
+  notesPlaceholder: { en: 'New to yoga, injuries, preferred language...', ru: 'Впервые на йоге, травмы, предпочитаемый язык...', lv: 'Pirmā reize jogā, traumas, vēlamā valoda...' } as I18n,
+  bookFresha: { en: 'Book on Fresha →', ru: 'Записаться через Fresha →', lv: 'Pieteikties Fresha →' } as I18n,
+  requestWa: { en: 'Request via WhatsApp →', ru: 'Запросить в WhatsApp →', lv: 'Pieprasīt WhatsApp →' } as I18n,
+
+  // Lang toggle
+  langToggle: { en: 'RU', ru: 'EN', lv: 'EN' } as I18n,
+}

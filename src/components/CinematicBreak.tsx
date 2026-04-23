@@ -16,7 +16,7 @@ export default function CinematicBreak() {
 
       <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 2rem' }}>
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.35em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '1rem' }}>A note</p>
-        <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '0.08em', color: studio.colors.text, lineHeight: 1, marginBottom: '1.5rem', fontWeight: 400 }}>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '0.08em', color: studio.colors.text, lineHeight: 1, marginBottom: '1.5rem', fontWeight: 400 }}>
           EVERY BREATH<br /><span style={{ WebkitTextStroke: '1.5px rgba(44,36,32,0.65)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>IS A BEGINNING</span>
         </h2>
         <a href="#classes" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(254,252,248,0.6)', color: studio.colors.text, fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.9rem 2.2rem', borderRadius: '999px', textDecoration: 'none', border: `1.5px solid ${studio.colors.text}`, backdropFilter: 'blur(8px)', transition: 'all 0.2s' }}

@@ -12,8 +12,8 @@ export default function Spotlight() {
         <div style={{ order: isMobile ? 2 : 1 }}>
           <FadeIn delay={0.1}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '1rem' }}>Spotlight</p>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '0.08em', color: studio.colors.text, lineHeight: 1 }}>FLY</h2>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '0.08em', color: studio.colors.primary, lineHeight: 1, marginBottom: '1.5rem' }}>YOGA</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '0.08em', color: studio.colors.text, lineHeight: 1 }}>FLY</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '0.08em', color: studio.colors.primary, lineHeight: 1, marginBottom: '1.5rem' }}>YOGA</h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.92rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.8, marginBottom: '2rem' }}>
               Antigravity yoga using silk hammocks. Decompresses the spine and opens up inversions with full support. No flexibility required — just curiosity.
             </p>
