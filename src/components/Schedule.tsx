@@ -1,49 +1,42 @@
+'use client'
+import FadeIn from './FadeIn'
+import useIsMobile from '@/hooks/useIsMobile'
 import { studio } from '@/config/studio'
 
 export default function Schedule() {
+  const isMobile = useIsMobile()
   return (
-    <section id="schedule" className="bg-bg py-20 md:py-32 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10 md:mb-14">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-blush-dark mb-4">
-            Weekly rhythm
-          </p>
-          <h2 className="font-[family-name:var(--font-display)] font-light leading-[0.95] tracking-tight">
-            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] text-ink">The </span>
-            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] italic text-blush-dark">schedule</span>
-          </h2>
-          <p className="mt-5 text-sm text-ink-soft max-w-lg mx-auto">
-            A typical week. Times shift monthly — check Instagram for the current calendar.
-          </p>
-        </div>
+    <section id="schedule" style={{ background: studio.colors.bg, padding: isMobile ? '4rem 1.5rem' : '7rem 4rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <FadeIn>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.75rem' }}>Weekly rhythm</p>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(3rem, 5vw, 5rem)', letterSpacing: '0.1em', color: studio.colors.text }}>
+              THE <span style={{ color: studio.colors.primary }}>SCHEDULE</span>
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', fontWeight: 300, color: studio.colors.gray, marginTop: '0.5rem', maxWidth: '500px', margin: '0.5rem auto 0' }}>
+              A typical week. Times shift monthly — check Instagram for the current calendar.
+            </p>
+          </div>
+        </FadeIn>
 
-        <div className="bg-cream rounded-2xl p-4 md:p-10">
-          {studio.schedule.map((day, i) => (
-            <div
-              key={day.day}
-              className={`grid grid-cols-[90px_1fr] md:grid-cols-[160px_1fr] gap-3 md:gap-8 py-4 md:py-5 ${
-                i !== studio.schedule.length - 1 ? 'border-b border-ink/10' : ''
-              }`}
-            >
-              <p className="font-[family-name:var(--font-display)] text-lg md:text-2xl text-ink">
-                {day.day}
-              </p>
-              <div className="flex flex-col gap-2">
-                {day.entries.map((e, j) => (
-                  <div
-                    key={j}
-                    className="flex items-baseline justify-between gap-4 text-sm md:text-base"
-                  >
-                    <span className="text-ink-soft tabular-nums tracking-wide text-xs md:text-sm">
-                      {e.time}
-                    </span>
-                    <span className="text-ink text-right">{e.class}</span>
-                  </div>
-                ))}
+        <FadeIn delay={0.1}>
+          <div style={{ background: studio.colors.bgAlt, borderRadius: '16px', padding: isMobile ? '1.25rem' : '2.5rem', border: '1px solid rgba(184,130,111,0.1)' }}>
+            {studio.schedule.map((day, i) => (
+              <div key={day.day} style={{ display: 'grid', gridTemplateColumns: isMobile ? '90px 1fr' : '180px 1fr', gap: isMobile ? '1rem' : '2.5rem', padding: '1.1rem 0', borderBottom: i !== studio.schedule.length - 1 ? '1px solid rgba(184,130,111,0.12)' : 'none' }}>
+                <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: isMobile ? '1.3rem' : '1.7rem', letterSpacing: '0.08em', color: studio.colors.text }}>{day.day}</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+                  {day.entries.map((e, j) => (
+                    <div key={j} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem' }}>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.05em', color: studio.colors.gray, fontVariantNumeric: 'tabular-nums' }}>{e.time}</span>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem', fontWeight: 400, color: studio.colors.text, textAlign: 'right' }}>{e.class}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

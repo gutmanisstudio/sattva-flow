@@ -2,14 +2,14 @@ import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import Classes from '@/components/Classes'
+import MenuSection from '@/components/MenuSection'
+import Spotlight from '@/components/Spotlight'
 import CinematicBreak from '@/components/CinematicBreak'
-import Testimonials from '@/components/Testimonials'
-import Book from '@/components/Book'
+import Reviews from '@/components/Reviews'
+import Reservation from '@/components/Reservation'
 import Schedule from '@/components/Schedule'
 import Faq from '@/components/Faq'
-import Visit from '@/components/Visit'
-import ContactForm from '@/components/ContactForm'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import MobileBookCta from '@/components/MobileBookCta'
 
@@ -17,17 +17,17 @@ export default function Home() {
   return (
     <SmoothScroll>
       <Navbar />
-      <main className="pb-24 lg:pb-0">
+      <main>
         <Hero />
         <About />
-        <Classes />
+        <MenuSection />
+        <Spotlight />
         <CinematicBreak />
-        <Testimonials />
-        <Book />
+        <Reviews />
+        <Reservation />
         <Schedule />
         <Faq />
-        <Visit />
-        <ContactForm />
+        <Contact />
       </main>
       <Footer />
       <MobileBookCta />

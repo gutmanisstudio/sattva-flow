@@ -1,69 +1,78 @@
 'use client'
 import { useEffect, useState } from 'react'
+import useIsMobile from '@/hooks/useIsMobile'
 import Logo from './Logo'
 import { studio } from '@/config/studio'
 
-const links = [
-  { href: '#about', label: 'About' },
-  { href: '#classes', label: 'Classes' },
-  { href: '#book', label: 'Book' },
-  { href: '#visit', label: 'Visit' },
-]
+const links = ['Home', 'About', 'Classes', 'Schedule', 'Visit']
 
 export default function Navbar() {
+  const isMobile = useIsMobile()
   const [scrolled, setScrolled] = useState(false)
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    const fn = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', fn)
+    return () => window.removeEventListener('scroll', fn)
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-ink/95' : 'bg-ink/85'
-      } backdrop-blur-md border-b border-cream/5`}
-    >
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 h-14 md:h-[70px] flex items-center justify-between gap-4">
-        <a href="#home" className="shrink-0">
-          <Logo className="text-xl md:text-2xl text-cream" />
-        </a>
+    <nav style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: isMobile ? '0 1.5rem' : '0 3rem',
+      height: '70px',
+      background: 'rgba(44,36,32,0.92)',
+      backdropFilter: 'blur(16px)',
+      borderBottom: '1px solid rgba(184,130,111,0.2)',
+    }}>
+      <a href="#home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <Logo color="#FEFCF8" fontSize="1.35rem" />
+      </a>
 
-        <ul className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-[11px] font-medium tracking-[0.2em] uppercase text-cream/70 hover:text-blush transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <ul style={{ display: isMobile ? 'none' : 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
+        {links.map(l => (
+          <li key={l}>
+            <a href={`#${l.toLowerCase()}`} style={{
+              fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 500,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.8)', textDecoration: 'none', transition: 'color 0.2s',
+            }}
+              onMouseEnter={e => e.currentTarget.style.color = studio.colors.primary}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
+            >{l}</a>
+          </li>
+        ))}
+      </ul>
 
-        <div className="flex items-center gap-3 md:gap-5">
-          <a
-            href={`tel:${studio.phone}`}
-            className="hidden md:inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-cream/55 hover:text-blush transition-colors"
-            aria-label="Call studio"
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        {!isMobile && (
+          <a href={`tel:${studio.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = studio.colors.primary}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}
           >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
             Call
           </a>
-          <a
-            href="#book"
-            className="inline-flex items-center gap-2 bg-blush hover:bg-blush-dark text-ink px-4 md:px-5 py-2 md:py-2.5 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase transition-colors"
-          >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            Book
-          </a>
-        </div>
+        )}
+
+        <a href="#book" style={{
+          fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700,
+          letterSpacing: '0.1em', textTransform: 'uppercase',
+          color: '#FEFCF8', background: studio.colors.primary,
+          padding: '0.6rem 1.5rem', borderRadius: '999px', textDecoration: 'none',
+          transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.4rem',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.background = studio.colors.primaryDark; e.currentTarget.style.transform = 'scale(1.04)' }}
+          onMouseLeave={e => { e.currentTarget.style.background = studio.colors.primary; e.currentTarget.style.transform = 'scale(1)' }}
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Book
+        </a>
       </div>
     </nav>
   )

@@ -1,138 +1,50 @@
+'use client'
+import useIsMobile from '@/hooks/useIsMobile'
 import Logo from './Logo'
 import { studio } from '@/config/studio'
 
 export default function Footer() {
-  const waNumber = studio.whatsapp.replace(/\D/g, '')
-  const year = new Date().getFullYear()
-
+  const isMobile = useIsMobile()
   return (
-    <footer className="bg-ink text-cream pt-16 md:pt-20 pb-8 px-6 md:px-12">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-12 pb-10 md:pb-12 border-b border-cream/10">
-          <div className="col-span-2 md:col-span-1">
-            <Logo className="text-2xl mb-4 text-cream" />
-            <p className="text-sm text-cream/50 leading-relaxed max-w-xs mb-6">
-              Holistic studio · body &amp; soul. Movement, healing, and gatherings in the heart of Jūrmala.
-            </p>
-            <div className="flex gap-2">
-              <a
-                href={studio.instagram}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center text-cream/50 hover:text-blush hover:border-blush transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
+    <footer style={{ background: studio.colors.text, padding: isMobile ? '3rem 1.5rem 2rem' : '5rem 2rem 2.5rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.5fr 1fr 1fr 1fr', gap: isMobile ? '2rem' : '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <div>
+            <div style={{ marginBottom: '1rem' }}><Logo color="#FEFCF8" fontSize="1.35rem" /></div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', fontWeight: 300, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: '240px', marginBottom: '1.5rem' }}>Holistic studio · body & soul. Movement, healing, and gatherings in the heart of Jūrmala.</p>
+            <div style={{ display: 'flex', gap: '0.6rem' }}>
+              <a href={studio.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = studio.colors.primary; e.currentTarget.style.color = studio.colors.primary }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
-              <a
-                href={`https://wa.me/${waNumber}`}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WhatsApp"
-                className="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center text-cream/50 hover:text-blush hover:border-blush transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
+              <a href={`https://wa.me/${studio.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = studio.colors.primary; e.currentTarget.style.color = studio.colors.primary }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.22em] uppercase text-cream/25 mb-5">
-              Explore
-            </h4>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                { href: '#about', label: 'About' },
-                { href: '#classes', label: 'Classes' },
-                { href: '#schedule', label: 'Schedule' },
-                { href: '#book', label: 'Book' },
-                { href: '#faq', label: 'FAQ' },
-                { href: '#visit', label: 'Visit' },
-              ].map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-cream/50 hover:text-blush transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.22em] uppercase text-cream/25 mb-5">
-              Visit
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-cream/50">
-              <li>{studio.address}</li>
-              <li className="whitespace-pre-line text-cream/40">
-                {studio.hours.weekday}
-                {'\n'}
-                {studio.hours.weekend}
-              </li>
-              <li>
-                <a
-                  href={studio.mapsLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-blush transition-colors"
-                >
-                  Open in maps →
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.22em] uppercase text-cream/25 mb-5">
-              Contact
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm">
-              <li>
-                <a
-                  href={`tel:${studio.phone}`}
-                  className="text-cream/50 hover:text-blush transition-colors"
-                >
-                  {studio.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`https://wa.me/${waNumber}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-cream/50 hover:text-blush transition-colors"
-                >
-                  WhatsApp
-                </a>
-              </li>
-              <li>
-                <a
-                  href={studio.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-cream/50 hover:text-blush transition-colors"
-                >
-                  {studio.instagramHandle}
-                </a>
-              </li>
-            </ul>
-          </div>
+          {[
+            { title: 'Explore', items: [{l:'About',h:'#about'},{l:'Classes',h:'#classes'},{l:'Schedule',h:'#schedule'},{l:'Book',h:'#book'},{l:'Visit',h:'#visit'}] },
+            { title: 'Hours', items: [{l:studio.hours.weekday,h:null},{l:studio.hours.friday,h:null},{l:studio.hours.sunday,h:null}] },
+            { title: 'Contact', items: [{l:studio.address,h:null},{l:studio.phone,h:`tel:${studio.phone}`},{l:studio.instagramHandle,h:studio.instagram}] },
+          ].map(col => (
+            <div key={col.title}>
+              <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1.2rem' }}>{col.title}</h4>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {col.items.map((item, idx) => (
+                  <li key={idx} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', fontWeight: 300, color: 'rgba(255,255,255,0.5)' }}>
+                    {item.h ? <a href={item.h} target={item.h.startsWith('http') ? '_blank' : undefined} rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{item.l}</a> : item.l}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-
-        <div className="flex flex-col md:flex-row md:justify-between items-center gap-2 pt-6">
-          <p className="text-xs text-cream/25">
-            © {year} {studio.name}, Jūrmala. All rights reserved.
-          </p>
-          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-cream/15">
-            Site by Gutmanis Studio
-          </p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '2rem', flexDirection: isMobile ? 'column' as const : 'row' as const, gap: isMobile ? '0.5rem' : '0' }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.2)' }}>© {new Date().getFullYear()} {studio.name}, Jūrmala. All rights reserved.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.12)' }}>Site by Gutmanis Studio</p>
         </div>
       </div>
     </footer>

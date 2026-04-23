@@ -2,14 +2,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, animate } from 'motion/react';
 import useIsMobile from '@/hooks/useIsMobile';
-import { restaurant } from '@/config/restaurant';
+import { studio } from '@/config/studio';
 
 export function MenuCarousel() {
   const isMobile = useIsMobile();
   const [index, setIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
-  const images = restaurant.menuImages;
+  const images = studio.menuImages;
 
   useEffect(() => {
     if (containerRef.current) {
@@ -24,7 +24,7 @@ export function MenuCarousel() {
       <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '20px' }} ref={containerRef}>
         <motion.div style={{ display: 'flex', x }}>
           {images.map((src, i) => (
-            <div key={i} style={{ flexShrink: 0, width: '100%', height: isMobile ? '400px' : '700px', background: '#F5EFE4' }}>
+            <div key={i} style={{ flexShrink: 0, width: '100%', height: isMobile ? '400px' : '700px', background: '#F5EDE0' }}>
               <img
                 src={src}
                 alt={`Menu page ${i + 1}`}
@@ -50,7 +50,7 @@ export function MenuCarousel() {
             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
           }}
         >
-          <svg width="20" height="20" fill="none" stroke={restaurant.colors.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <svg width="20" height="20" fill="none" stroke={studio.colors.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
             <path d="M15 19l-7-7 7-7"/>
           </svg>
         </motion.button>
@@ -69,7 +69,7 @@ export function MenuCarousel() {
             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
           }}
         >
-          <svg width="20" height="20" fill="none" stroke={restaurant.colors.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <svg width="20" height="20" fill="none" stroke={studio.colors.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
             <path d="M9 5l7 7-7 7"/>
           </svg>
         </motion.button>
@@ -85,7 +85,7 @@ export function MenuCarousel() {
             <button key={i} onClick={() => setIndex(i)} style={{
               height: '8px', width: i === index ? '28px' : '8px',
               borderRadius: '999px', border: 'none', cursor: 'pointer',
-              background: i === index ? restaurant.colors.primary : 'rgba(255,255,255,0.6)',
+              background: i === index ? studio.colors.primary : 'rgba(255,255,255,0.6)',
               transition: 'all 0.3s ease',
             }} />
           ))}

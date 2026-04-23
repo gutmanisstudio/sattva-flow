@@ -1,37 +1,35 @@
+'use client'
+import FadeIn from './FadeIn'
+import useIsMobile from '@/hooks/useIsMobile'
 import { studio } from '@/config/studio'
 
 export default function Faq() {
+  const isMobile = useIsMobile()
   return (
-    <section id="faq" className="bg-cream py-20 md:py-32 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-10 md:mb-14">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-blush-dark mb-4">
-            Questions
-          </p>
-          <h2 className="font-[family-name:var(--font-display)] font-light leading-[0.95] tracking-tight">
-            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] text-ink">Good to </span>
-            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] italic text-blush-dark">know</span>
-          </h2>
-        </div>
+    <section id="faq" style={{ background: studio.colors.bgAlt, padding: isMobile ? '4rem 1.5rem' : '7rem 4rem' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <FadeIn>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: studio.colors.primary, marginBottom: '0.75rem' }}>Questions</p>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(3rem, 5vw, 5rem)', letterSpacing: '0.1em', color: studio.colors.text }}>
+              GOOD TO <span style={{ color: studio.colors.primary }}>KNOW</span>
+            </h2>
+          </div>
+        </FadeIn>
 
-        <div className="flex flex-col gap-2">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           {studio.faqs.map((faq, i) => (
-            <details
-              key={i}
-              className="group bg-bg rounded-2xl border border-ink/5 overflow-hidden transition-colors open:border-blush-dark/30"
-            >
-              <summary className="cursor-pointer px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4 list-none [&::-webkit-details-marker]:hidden">
-                <span className="text-base md:text-lg font-[family-name:var(--font-display)] pr-2 text-ink">
-                  {faq.q}
-                </span>
-                <span className="text-2xl text-blush-dark group-open:rotate-45 transition-transform shrink-0 leading-none">
-                  +
-                </span>
-              </summary>
-              <div className="px-6 pb-6 md:px-8 md:pb-8 text-ink-soft leading-relaxed">
-                {faq.a}
-              </div>
-            </details>
+            <FadeIn key={i} delay={i * 0.05}>
+              <details style={{ background: studio.colors.bg, borderRadius: '14px', border: '1px solid rgba(184,130,111,0.1)', overflow: 'hidden' }}>
+                <summary style={{ cursor: 'pointer', listStyle: 'none', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', fontWeight: 500, color: studio.colors.text }}>{faq.q}</span>
+                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.5rem', color: studio.colors.primary, lineHeight: 1, flexShrink: 0 }}>+</span>
+                </summary>
+                <div style={{ padding: '0 1.5rem 1.5rem', fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem', fontWeight: 300, color: studio.colors.gray, lineHeight: 1.7 }}>
+                  {faq.a}
+                </div>
+              </details>
+            </FadeIn>
           ))}
         </div>
       </div>
