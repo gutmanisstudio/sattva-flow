@@ -4,7 +4,14 @@ import useIsMobile from '@/hooks/useIsMobile'
 import Logo from './Logo'
 import { studio } from '@/config/studio'
 
-const links = ['Home', 'About', 'Classes', 'Schedule', 'Visit']
+const links = [
+  { l: 'Home', h: '/#home' },
+  { l: 'About', h: '/about' },
+  { l: 'Classes', h: '/#classes' },
+  { l: 'Rental', h: '/rental' },
+  { l: 'Schedule', h: '/#schedule' },
+  { l: 'Visit', h: '/#visit' },
+]
 
 export default function Navbar() {
   const isMobile = useIsMobile()
@@ -32,16 +39,16 @@ export default function Navbar() {
       </a>
 
       <ul style={{ display: isMobile ? 'none' : 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
-        {links.map(l => (
-          <li key={l}>
-            <a href={`#${l.toLowerCase()}`} style={{
+        {links.map(link => (
+          <li key={link.l}>
+            <a href={link.h} style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 500,
               letterSpacing: '0.14em', textTransform: 'uppercase',
               color: studio.colors.gray, textDecoration: 'none', transition: 'color 0.2s',
             }}
               onMouseEnter={e => e.currentTarget.style.color = studio.colors.primary}
               onMouseLeave={e => e.currentTarget.style.color = studio.colors.gray}
-            >{l}</a>
+            >{link.l}</a>
           </li>
         ))}
       </ul>

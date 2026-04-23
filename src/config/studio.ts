@@ -24,6 +24,7 @@ export const studio = {
   heroVideoStart: 0,
   aboutVideo: '/videos/interior.mp4',
   cinematicVideo: '/videos/hero.mp4',
+  rentalVideos: ['/noma/telpunoma1.mp4', '/noma/telpunoma2.mp4'],
   colors: {
     primary: '#B8826F',
     primaryDark: '#2C2420',
@@ -83,14 +84,52 @@ export const studio = {
     { slug: 'art-therapy', name: 'Art Therapy', pillar: 'mind', duration: '60 min', level: 'By appointment', price: 'From €45', description: 'Process emotions through creative expression.' },
     { slug: 'psychotherapy', name: 'Psychotherapy', pillar: 'mind', duration: '50 min', level: 'By appointment', price: 'From €50', description: 'Confidential one-to-one psychotherapy.' },
   ],
+  scheduleMonth: 'April',
   schedule: [
-    { day: 'Monday', entries: [{ time: '9:00 – 10:00', class: 'Barre' }, { time: '11:00 – 11:50', class: 'Fly Yoga' }, { time: '13:00 – 14:00', class: 'Hatha Yoga' }, { time: '19:30 – 20:50', class: 'Dance' }] },
-    { day: 'Tuesday', entries: [{ time: '9:00 – 9:45', class: 'Stretching' }, { time: '18:00 – 19:00', class: 'Vinyasa Flow' }, { time: '20:00 – 21:00', class: 'Sound Healing' }] },
-    { day: 'Wednesday', entries: [{ time: '9:00 – 10:00', class: 'Barre' }, { time: '11:30 – 12:30', class: 'Tai Chi & Qi Gong' }, { time: '19:00 – 20:15', class: 'Hatha Yoga' }] },
-    { day: 'Thursday', entries: [{ time: '9:00 – 10:00', class: 'Stretching' }, { time: '18:30 – 19:45', class: 'Vinyasa Flow' }, { time: '20:00 – 21:00', class: 'Fly Yoga' }] },
-    { day: 'Friday', entries: [{ time: '9:00 – 10:00', class: 'Barre' }, { time: '13:30 – 14:30', class: 'Dance' }, { time: '19:00 – 20:00', class: 'Sound Healing' }] },
-    { day: 'Saturday', entries: [{ time: '10:00 – 11:30', class: 'Hatha Yoga' }, { time: '12:00 – 13:00', class: 'Fly Yoga' }] },
-    { day: 'Sunday', entries: [{ time: '10:00 – 11:00', class: 'Kids Yoga' }, { time: '18:00 – 19:00', class: 'Vinyasa Flow' }] },
+    { day: 'Monday', entries: [
+      { time: '8:50 – 9:50', class: 'Barre', teacher: 'Irina' },
+      { time: '10:00 – 11:30', class: 'Yoga', teacher: 'Santa' },
+      { time: '18:00 – 19:00', class: 'Dance', teacher: 'Annila' },
+      { time: '20:00 – 21:00', class: 'Dance', teacher: 'Annila' },
+    ]},
+    { day: 'Tuesday', entries: [
+      { time: '9:00 – 10:00', class: 'Fitness', teacher: 'Marija' },
+      { time: '10:15 – 11:45', class: 'Yoga for Beginners', teacher: 'Juliana' },
+      { time: '14:00 – 15:30', class: 'Yoga for Kids' },
+      { time: '16:00 – 17:00', class: 'Tai Chi', teacher: 'Igor' },
+      { time: '17:00 – 18:00', class: 'Hang School' },
+      { time: '18:30 – 20:00', class: 'Hatha Yoga', teacher: 'Iveta' },
+    ]},
+    { day: 'Wednesday', entries: [
+      { time: '9:00 – 11:00', class: 'Barre / Stretching', teacher: 'Irina' },
+      { time: '11:30 – 13:00', class: 'Tai Chi', teacher: 'Marija' },
+      { time: '15:00 – 16:30', class: 'Fly Yoga for Kids' },
+      { time: '18:00 – 19:30', class: 'Yoga', teacher: 'Nelly' },
+      { time: '20:00 – 21:00', class: 'Dance', teacher: 'Anila' },
+    ]},
+    { day: 'Thursday', entries: [
+      { time: '6:00 – 7:30', class: 'Kriya Yoga', teacher: 'Dipika' },
+      { time: '9:15 – 10:30', class: 'Fitness', teacher: 'Marija' },
+      { time: '10:30 – 11:50', class: 'Vinyasa Yoga', teacher: 'Santa' },
+      { time: '12:00 – 18:00', class: 'Massage', teacher: 'Kristina' },
+      { time: '17:30 – 19:00', class: 'Hatha Yoga', teacher: 'Iveta' },
+      { time: '18:30 – 20:00', class: 'Antigravity Yoga + Sound Healing', teacher: 'Juliana' },
+    ]},
+    { day: 'Friday', entries: [
+      { time: '9:00 – 12:00', class: 'Barre / Stretching', teacher: 'Irina' },
+      { time: '12:15 – 19:00', class: 'Massage', teacher: 'Natalya' },
+      { time: '19:00 – 21:00', class: 'Antigravity + Flow Dance + Sound Healing', teacher: 'Juliana' },
+    ]},
+    { day: 'Saturday', entries: [
+      { time: '9:00 – 10:30', class: 'Vinyasa Yoga', teacher: 'Santa' },
+      { time: '10:30 – 12:00', class: 'Yoga', teacher: 'Nelli' },
+      { time: '19:00 – 20:30', class: 'Antigravity Yoga' },
+      { time: '20:30 – 22:00', class: 'Flow Meditation Dance + Sound Healing' },
+    ]},
+    { day: 'Sunday', entries: [
+      { time: '10:00 – 11:30', class: 'Yoga for Beginners + Antigravity', teacher: 'Juliana' },
+      { time: '12:00 – 13:00', class: 'Hang — Ethnic Instruments School' },
+    ]},
   ],
   faqs: [
     { q: 'I have never done yoga before — is that okay?', a: 'Absolutely. Most classes are all-levels. Hatha Yoga and Stretching are the easiest starting points.' },
@@ -101,7 +140,23 @@ export const studio = {
     { q: 'Where do I change?', a: 'Changing areas are on-site. We recommend arriving ready if possible.' },
     { q: 'Is there parking?', a: 'Street parking is available on Jomas iela.' },
   ],
-  announcements: [] as { date: string; title: string; body: string }[],
+  announcements: [
+    { date: '2026-04-22', title: 'Irina on vacation', body: 'Teacher Irina is away from April 25 to May 10. Barre and Stretching classes will be covered by substitute teachers — check the schedule or Instagram for updates.' },
+    { date: '2026-04-18', title: 'New: Antigravity + Sound Healing', body: 'A new combined class every Thursday evening with Juliana — antigravity flow followed by a sound bath. Limited hammocks, book ahead.' },
+  ] as { date: string; title: string; body: string }[],
+  teachers: [
+    { name: 'Irina', specialties: ['Barre', 'Stretching'] },
+    { name: 'Santa', specialties: ['Vinyasa Yoga', 'Hatha Yoga'] },
+    { name: 'Juliana', specialties: ['Yoga for Beginners', 'Antigravity', 'Sound Healing'] },
+    { name: 'Iveta', specialties: ['Hatha Yoga'] },
+    { name: 'Nelly', specialties: ['Yoga'] },
+    { name: 'Marija', specialties: ['Fitness', 'Tai Chi'] },
+    { name: 'Igor', specialties: ['Tai Chi'] },
+    { name: 'Annila', specialties: ['Dance'] },
+    { name: 'Dipika', specialties: ['Kriya Yoga'] },
+    { name: 'Kristina', specialties: ['Massage'] },
+    { name: 'Natalya', specialties: ['Massage'] },
+  ],
 }
 
 export type Studio = typeof studio

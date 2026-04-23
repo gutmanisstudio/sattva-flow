@@ -87,13 +87,13 @@ export default function About() {
 
           <FadeIn delay={0.65}>
             <a
-              href="#classes"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.8rem', background: '#B8826F', color: '#FEFCF8', fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.85rem 2rem', borderRadius: '999px', transition: 'all 0.2s', alignSelf: 'flex-start', textDecoration: 'none' }}
+              href="/about"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.8rem', background: '#B8826F', color: '#FEFCF8', fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.85rem 2rem', borderRadius: '999px', transition: 'all 0.2s', alignSelf: 'flex-start', textDecoration: 'none' }}
               onMouseEnter={e => { e.currentTarget.style.background = '#2C2420'; e.currentTarget.style.transform = 'scale(1.04)' }}
               onMouseLeave={e => { e.currentTarget.style.background = '#B8826F'; e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              See our classes
+              Our story
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </FadeIn>
         </div>
