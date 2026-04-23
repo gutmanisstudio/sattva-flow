@@ -18,38 +18,49 @@ export default function ContactForm() {
     ]
       .filter(Boolean)
       .join('\n')
-    const url = `https://wa.me/${wa}?text=${encodeURIComponent(body)}`
-    window.open(url, '_blank', 'noopener,noreferrer')
+    window.open(
+      `https://wa.me/${wa}?text=${encodeURIComponent(body)}`,
+      '_blank',
+      'noopener,noreferrer',
+    )
   }
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-6 bg-bg">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-ink-soft mb-4">Reach out</p>
-          <h2 className="font-[family-name:var(--font-display)] font-light text-4xl md:text-5xl lg:text-6xl">
-            Get in touch
+    <section id="contact" className="bg-cream py-20 md:py-32 px-6 md:px-12">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-blush-dark mb-4">
+            Reach out
+          </p>
+          <h2 className="font-[family-name:var(--font-display)] font-light leading-[0.95] tracking-tight">
+            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] text-ink">Send a </span>
+            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] italic text-blush-dark">
+              message
+            </span>
           </h2>
-          <p className="mt-6 max-w-xl mx-auto text-ink-soft leading-relaxed">
-            Questions about classes, bookings, or private sessions? Send a message — it goes straight to WhatsApp.
+          <p className="mt-5 text-sm text-ink-soft max-w-md mx-auto">
+            Questions about classes, bookings, or private sessions — we&rsquo;ll reply on WhatsApp.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-bg rounded-2xl p-6 md:p-10 flex flex-col gap-4 border border-ink/5 shadow-xl shadow-blush-dark/5"
+        >
           <input
             required
             type="text"
             placeholder="Your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="px-5 py-4 bg-cream rounded-2xl text-ink placeholder:text-ink-soft/60 focus:outline-none focus:ring-2 focus:ring-blush"
+            className="px-5 py-4 bg-cream/60 border border-ink/10 focus:border-blush-dark rounded-xl text-ink placeholder:text-ink-soft/60 focus:outline-none transition-colors"
           />
           <input
             type="text"
-            placeholder="Topic (optional — e.g. Hatha Yoga, booking, private session)"
+            placeholder="Topic (e.g. Fly Yoga, private session)"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="px-5 py-4 bg-cream rounded-2xl text-ink placeholder:text-ink-soft/60 focus:outline-none focus:ring-2 focus:ring-blush"
+            className="px-5 py-4 bg-cream/60 border border-ink/10 focus:border-blush-dark rounded-xl text-ink placeholder:text-ink-soft/60 focus:outline-none transition-colors"
           />
           <textarea
             required
@@ -57,13 +68,16 @@ export default function ContactForm() {
             rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="px-5 py-4 bg-cream rounded-2xl text-ink placeholder:text-ink-soft/60 focus:outline-none focus:ring-2 focus:ring-blush resize-none"
+            className="px-5 py-4 bg-cream/60 border border-ink/10 focus:border-blush-dark rounded-xl text-ink placeholder:text-ink-soft/60 focus:outline-none transition-colors resize-none"
           />
           <button
             type="submit"
-            className="mt-2 px-7 py-4 bg-ink text-bg rounded-full text-xs md:text-sm font-medium tracking-[0.12em] uppercase hover:bg-ink-soft transition-colors self-center"
+            className="mt-2 inline-flex items-center justify-center gap-2 bg-ink hover:bg-blush-dark text-cream px-7 py-4 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase transition-colors self-center"
           >
-            Send via WhatsApp
+            Send on WhatsApp
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
           </button>
         </form>
       </div>

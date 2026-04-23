@@ -2,43 +2,44 @@ import { studio } from '@/config/studio'
 
 export default function Schedule() {
   return (
-    <section id="schedule" className="py-20 md:py-32 px-6 bg-bg">
+    <section id="schedule" className="bg-bg py-20 md:py-32 px-6 md:px-12">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-ink-soft mb-4">Weekly rhythm</p>
-          <h2 className="font-[family-name:var(--font-display)] font-light text-4xl md:text-5xl lg:text-6xl">
-            Schedule
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-blush-dark mb-4">
+            Weekly rhythm
+          </p>
+          <h2 className="font-[family-name:var(--font-display)] font-light leading-[0.95] tracking-tight">
+            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] text-ink">The </span>
+            <span className="text-[clamp(2.5rem,5.5vw,4.5rem)] italic text-blush-dark">schedule</span>
           </h2>
-          <p className="mt-6 max-w-xl mx-auto text-ink-soft text-sm leading-relaxed">
-            A typical week at the studio. Times shift month to month — check Instagram for current updates.
+          <p className="mt-5 text-sm text-ink-soft max-w-lg mx-auto">
+            A typical week. Times shift monthly — check Instagram for the current calendar.
           </p>
         </div>
 
-        <div className="space-y-4 md:space-y-2">
-          {studio.schedule.map((day) => (
+        <div className="bg-cream rounded-2xl p-4 md:p-10">
+          {studio.schedule.map((day, i) => (
             <div
               key={day.day}
-              className="flex flex-col md:flex-row md:items-start border-b border-ink/10 pb-5 md:pb-4 gap-3 md:gap-8"
+              className={`grid grid-cols-[90px_1fr] md:grid-cols-[160px_1fr] gap-3 md:gap-8 py-4 md:py-5 ${
+                i !== studio.schedule.length - 1 ? 'border-b border-ink/10' : ''
+              }`}
             >
-              <p className="md:w-32 font-[family-name:var(--font-display)] text-xl md:text-2xl shrink-0">
+              <p className="font-[family-name:var(--font-display)] text-lg md:text-2xl text-ink">
                 {day.day}
               </p>
-              <div className="flex-1 flex flex-col gap-2">
-                {day.entries.length === 0 ? (
-                  <span className="text-sm text-ink-soft italic">Rest</span>
-                ) : (
-                  day.entries.map((e, i) => (
-                    <div
-                      key={i}
-                      className="flex items-baseline justify-between gap-4 text-sm md:text-base"
-                    >
-                      <span className="text-ink-soft tabular-nums tracking-wide">
-                        {e.time}
-                      </span>
-                      <span className="text-ink text-right">{e.class}</span>
-                    </div>
-                  ))
-                )}
+              <div className="flex flex-col gap-2">
+                {day.entries.map((e, j) => (
+                  <div
+                    key={j}
+                    className="flex items-baseline justify-between gap-4 text-sm md:text-base"
+                  >
+                    <span className="text-ink-soft tabular-nums tracking-wide text-xs md:text-sm">
+                      {e.time}
+                    </span>
+                    <span className="text-ink text-right">{e.class}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
