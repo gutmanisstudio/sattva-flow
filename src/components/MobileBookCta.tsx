@@ -5,10 +5,13 @@ import { studio } from '@/config/studio'
 export default function MobileBookCta() {
   const isMobile = useIsMobile()
   if (!isMobile) return null
+  const bookHref = studio.freshaUrl || '/schedule#book'
   return (
     <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 100, padding: '0.75rem', pointerEvents: 'none' }}>
       <a
-        href="#book"
+        href={bookHref}
+        target={studio.freshaUrl ? '_blank' : undefined}
+        rel={studio.freshaUrl ? 'noopener noreferrer' : undefined}
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', pointerEvents: 'auto', background: studio.colors.text, color: '#FEFCF8', fontFamily: "'DM Sans', sans-serif", fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '1rem 2rem', borderRadius: '999px', textDecoration: 'none', boxShadow: '0 15px 40px rgba(44,36,32,0.35)', maxWidth: '420px', margin: '0 auto' }}
       >
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

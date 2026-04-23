@@ -9,7 +9,7 @@ const links = [
   { l: 'About', h: '/about' },
   { l: 'Classes', h: '/#classes' },
   { l: 'Rental', h: '/rental' },
-  { l: 'Schedule', h: '/#schedule' },
+  { l: 'Schedule', h: '/schedule' },
   { l: 'Visit', h: '/#visit' },
 ]
 
@@ -66,7 +66,7 @@ export default function Navbar() {
           </a>
         )}
 
-        <a href="#book" style={{
+        <a href={studio.freshaUrl || '/schedule#book'} target={studio.freshaUrl ? '_blank' : undefined} rel={studio.freshaUrl ? 'noopener noreferrer' : undefined} style={{
           fontFamily: "'DM Sans', sans-serif", fontSize: '0.72rem', fontWeight: 600,
           letterSpacing: '0.12em', textTransform: 'uppercase',
           color: '#FEFCF8', background: studio.colors.primary,

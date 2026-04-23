@@ -141,9 +141,9 @@ export const studio = {
     { q: 'Is there parking?', a: 'Street parking is available on Jomas iela.' },
   ],
   announcements: [
-    { date: '2026-04-22', title: 'Irina on vacation', body: 'Teacher Irina is away from April 25 to May 10. Barre and Stretching classes will be covered by substitute teachers — check the schedule or Instagram for updates.' },
-    { date: '2026-04-18', title: 'New: Antigravity + Sound Healing', body: 'A new combined class every Thursday evening with Juliana — antigravity flow followed by a sound bath. Limited hammocks, book ahead.' },
-  ] as { date: string; title: string; body: string }[],
+    { date: '2026-04-22', title: 'Irina on vacation', body: 'Teacher Irina is away from April 25 to May 10. Barre and Stretching classes will be covered by substitute teachers — check the schedule or Instagram for updates.', banner: '/banners/irina-vacation.jpg' },
+    { date: '2026-04-18', title: 'New: Antigravity + Sound Healing', body: 'A new combined class every Thursday evening with Juliana — antigravity flow followed by a sound bath. Limited hammocks, book ahead.', banner: '/banners/antigravity-sound.jpg' },
+  ] as { date: string; title: string; body: string; banner?: string }[],
   teachers: [
     { name: 'Irina', specialties: ['Barre', 'Stretching'] },
     { name: 'Santa', specialties: ['Vinyasa Yoga', 'Hatha Yoga'] },
